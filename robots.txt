@@ -1,0 +1,10 @@
+# Allow all crawlers to access everything on the site
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://hetsi0307.github.io/sitemap.xml
+
+# (Optional for the future)
+# Disallow: /private/
+
