@@ -1,218 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hetsi Tewar - Portfolio</title>
+  <title>Hetsi Tewar Portfolio | WordPress Developer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Meta -->
+  <meta name="description" content="Official Hetsi Tewar Portfolio – WordPress Developer from Baroda. Explore my projects, skills, SEO-friendly website builder and professional experience in web development." />
+  <meta name="keywords" content="Hetsi Tewar portfolio, WordPress Developer, Baroda web developer, website designer, web development projects" />
+  <meta property="og:title" content="Hetsi Tewar Portfolio | WordPress Developer">
+  <meta property="og:description" content="Portfolio of Hetsi Tewar, WordPress Developer from Baroda. Explore my projects, skills, and experience.">
+  <meta property="og:image" content="https://hetsi0307.github.io/images/myimage.jpg">
+  <meta property="og:url" content="https://hetsi0307.github.io/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hetsi Tewar Portfolio | WordPress Developer">
+  <meta name="twitter:description" content="Explore my projects, skills, and experience as a WordPress Developer from Baroda.">
+  <meta name="twitter:image" content="https://hetsi0307.github.io/images/myimage.jpg">
+  <meta name="google-site-verification" content="8AmrMMlN6zRmI7KKZZcN0dS_fgdq6knham7-eqs9K6E" />
+
+  <!-- Icons + Theme CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- ===== Hero/Projects FIXES (override) ===== -->
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Kill any default page gaps that create a white strip */
+    html, body { margin:0; padding:0; }
+
+    /* Some HTML5 UP themes draw a tiny stripe with ::before – hide it */
+    body::before, #wrapper::before { display: none !important; }
+
+    /* === HERO (intro) — left text / right image like before === */
+    section.intro{
+      min-height:100vh;               /* fullscreen hero look */
+      display:flex !important;        /* make header + content sit side-by-side */
+      align-items:center;
+      justify-content:center;
+      padding:4rem 2rem;              /* comfortable spacing */
+    }
+    /* Ensure the two direct children (header, .content) behave as columns */
+    section.intro > header,
+    section.intro > .content{
+      position:static !important;     /* cancel any absolute positioning */
+      transform:none !important;
+      flex:1 1 50%;
+      max-width:650px;
+    }
+    section.intro > header{
+      text-align:left !important;
     }
 
-    body {
-      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f8f9fa;
+    /* Tame the huge heading sizes */
+    section.intro > header h1{
+      font-size:clamp(28px,6vw,56px) !important;
+      line-height:1.15;
+      margin:0 0 0.85rem 0;
+    }
+    section.intro > header p{
+      font-size:clamp(14px,2.2vw,20px) !important;
+      letter-spacing:.02em;
+      opacity:.9;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    /* Right column: image */
+    section.intro > .content{
+      display:flex !important;
+      align-items:center;
+      justify-content:center;
+    }
+    section.intro .image.fill{
+      width:100%;
+      max-width:520px;                /* keeps a nice proportion */
+      height:auto !important;
+    }
+    section.intro .image.fill img{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:cover;
+      border-radius:14px;
     }
 
-    /* Hero Section */
-    section.intro {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      padding: 80px 60px;
-      background: linear-gradient(135deg, #4ecdc4, #556270);
-      color: #fff;
-    }
+    /* Keep the arrow but make sure it doesn’t push layout */
+    section.intro ul.actions{ margin-top:1.25rem; }
 
-    section.intro .content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1200px;
-      gap: 50px;
+    /* ===== Projects grid (your two items) ===== */
+    #projects{ margin-top:3.5rem; }
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap:1.5rem;
     }
-
-    section.intro .text {
-      flex: 1;
+    .project-card{
+      background:#fff;
+      border-radius:12px;
+      padding:1.25rem;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      transition:transform .25s ease, box-shadow .25s ease;
     }
-
-    section.intro .text h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+    .project-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 14px 28px rgba(0,0,0,.12);
     }
-
-    section.intro .text p {
-      font-size: 1.2rem;
-      line-height: 1.6;
+    .project-card .image img{
+      width:100%; border-radius:10px; margin-bottom:0.75rem;
     }
+    .project-card h3{ margin:0 0 .4rem 0; font-size:1.2rem; }
 
-    section.intro .image {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    section.intro .image img {
-      max-width: 400px;
-      width: 100%;
-      height: auto;
-      border-radius: 15px;
-      object-fit: cover;
-    }
-
-    /* Section Styles */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #4ecdc4;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    /* Experience */
-    .job {
-      margin-bottom: 20px;
-    }
-
-    .job h3 {
-      color: #0077cc;
-    }
-
-    .job p {
-      margin-top: 8px;
-    }
-
-    /* Portfolio Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Blog Section */
-    .blog {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .blog-post {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .blog-post:hover {
-      transform: translateY(-5px);
-    }
-
-    .blog-post h3 {
-      margin-bottom: 10px;
-      color: #0077cc;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: #fff;
-      margin-top: 40px;
-    }
-
+    /* Small tweaks to keep everything readable */
+    section header h2{ font-size:clamp(22px,4.2vw,30px); }
+    .feature-icons li{ font-size:0.98rem; }
   </style>
 </head>
-<body>
-  
-  <!-- Hero Section -->
-  <section class="intro">
-    <div class="content">
-      <div class="text">
+<body class="is-preload">
+
+  <div id="wrapper">
+
+    <!-- ===== Intro (HERO) — text LEFT, image RIGHT ===== -->
+    <section class="intro">
+      <header>
         <h1>Hetsi Tewar - WordPress Developer in Baroda</h1>
         <p>WordPress Developer | Website Designer | Tech Enthusiast</p>
+        <ul class="actions">
+          <li><a href="#about" class="arrow scrolly"><span class="label">Next</span></a></li>
+        </ul>
+      </header>
+
+      <div class="content">
+        <span class="image fill" data-position="center">
+          <!-- Use your portrait here; you have myimage.jpg at repo root -->
+          <img src="myimage.jpg" alt="Hetsi Tewar - WordPress Developer">
+        </span>
       </div>
-      <div class="image">
-        <img src="homeopathy.png" alt="Hetsi Tewar">
+    </section>
+
+    <!-- About Me -->
+    <section id="about">
+      <header><h2>About Me</h2></header>
+      <div class="content">
+        <p>I’m currently a WordPress Developer at <strong>SEO Webplanet Solution</strong>, with a Bachelor's degree in <strong>Computer Engineering</strong> from <strong>SVIT</strong> (CGPA: 7.18). I enjoy turning ideas into elegant and functional digital solutions. With a strong foundation in web development, I strive to craft engaging user experiences and scalable WordPress sites.</p>
       </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <header><h2>Skills</h2></header>
+      <div class="content">
+        <ul class="feature-icons">
+          <li class="icon solid fa-code">HTML5, CSS3, JavaScript</li>
+          <li class="icon solid fa-code">PHP, MySQL</li>
+          <li class="icon brands fa-wordpress">WordPress (Themes, Plugins)</li>
+          <li class="icon solid fa-terminal">Java, Python</li>
+          <li class="icon solid fa-mobile-alt">Responsive Design</li>
+          <li class="icon brands fa-github">Git & GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <header><h2>Experience</h2></header>
+      <div class="content">
+        <h3>WordPress Developer | Website Designer</h3>
+        <p><strong>SEO Webplanet Solution</strong> — 2025-Present<br>
+        Designing and developing custom WordPress websites, optimizing themes, and implementing responsive, SEO-friendly designs for clients.</p>
+
+        <h3>WordPress Developer Intern</h3>
+        <p><strong>Maskoid Technology</strong> — 2024-2025<br>
+        Worked on custom WordPress websites, optimizing themes, and dynamic UI using Elementor and core web technologies.</p>
+      </div>
+    </section>
+
+    <!-- Projects (directly after Experience, as you requested) -->
+    <section id="projects">
+      <header><h2>Projects</h2></header>
+      <div class="content">
+        <div class="projects-grid">
+
+          <!-- Project 1: Homeopathy clinic (full website) -->
+          <article class="project-card">
+            <span class="image"><img src="homeopathy.png" alt="Dr. Mahavrat’s Cosmic Homeo Healing Centre"></span>
+            <h3>Dr. Mahavrat’s Cosmic Homeo Healing Centre</h3>
+            <p>
+              Built a complete website for a renowned homeopathy & holistic healing clinic in Vadodara (near Vasna D-Mart Road).  
+              Includes <strong>homeopathy services</strong>, <strong>aesthetic treatments</strong> (Radiofrequency, Skin Peels, Diode Laser), and <strong>holistic therapies</strong> like Ayurveda, Reiki, Yoga, and Naturopathy.  
+              Optimized to appear on Google when people search for “Dr Mahavrat Patel”. (No external links added.)
+            </p>
+          </article>
+
+          <!-- Project 2: Maskoid (services section pages only) -->
+          <article class="project-card">
+            <span class="image"><img src="maskoid.png" alt="Maskoid Technology"></span>
+            <h3>Maskoid Technology</h3>
+            <p>
+              Contributed at Maskoid Technology (Jetalpur Road, Vadodara).  
+              Focused on <strong>SEO-friendly</strong> websites and WordPress builds; I developed the <strong>Service Section pages</strong> using Elementor + custom CSS. (No external links added.)
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <header><h2>Education</h2></header>
+      <div class="content">
+        <h3>B.E. in Computer Engineering</h3>
+        <p><strong>SVIT, Vasad</strong> – CGPA: 7.18<br>Graduated: 2024</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <header><h2>Get in Touch</h2></header>
+      <div class="content">
+        <ul class="items">
+          <li><h3>Email</h3><a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a></li>
+          <li><h3>GitHub</h3><a href="https://github.com/hetsi0307">github.com/hetsi0307</a></li>
+          <li><h3>LinkedIn</h3><a href="https://linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/">linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="copyright">
+      &copy; Hetsi Tewar. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.
     </div>
-  </section>
 
-  <!-- Experience Section -->
-  <section>
-    <h2>Experience</h2>
-    <div class="job">
-      <h3>WordPress Developer</h3>
-      <p><strong>Freelance | 2021 - Present</strong></p>
-      <p>Developed and customized WordPress websites for clients in healthcare, tech, and business sectors. Specialized in responsive, SEO-friendly websites.</p>
-    </div>
-  </section>
+  </div>
 
-  <!-- Portfolio Section -->
-  <section>
-    <h2>Portfolio</h2>
-    <div class="gallery">
-      <img src="pic01.jpg" alt="Project 1">
-      <img src="pic02.jpg" alt="Project 2">
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section>
-    <h2>Blog</h2>
-    <div class="blog">
-      <div class="blog-post">
-        <h3>5 Tips for Creating SEO-Friendly WordPress Sites</h3>
-        <p>Learn how to optimize your WordPress website for search engines with practical tips on content, speed, and design.</p>
-      </div>
-      <div class="blog-post">
-        <h3>Why Responsive Design Matters</h3>
-        <p>Discover why making your website mobile-friendly is critical for modern businesses.</p>
-      </div>
-      <div class="blog-post">
-        <h3>Top WordPress Plugins for 2025</h3>
-        <p>A list of must-have plugins to supercharge your WordPress website this year.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Hetsi Tewar. All Rights Reserved.</p>
-  </footer>
-
+  <!-- Scripts (keep your original) -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
