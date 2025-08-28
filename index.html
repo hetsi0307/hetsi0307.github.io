@@ -1,238 +1,170 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Hetsi Tewar Portfolio | WordPress Developer</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
-  <!-- Meta description for Google search results -->
-  <meta name="description" content="Official Hetsi Tewar Portfolio – WordPress Developer from Baroda. Explore my projects, skills, SEO-friendly website builder and professional experience in web development." />
-
-  <!-- ✅ Open Graph tags -->
-  <meta property="og:title" content="Hetsi Tewar Portfolio | WordPress Developer">
-  <meta property="og:description" content="Portfolio of Hetsi Tewar, WordPress Developer from Baroda. Explore my projects, skills, and experience.">
-  <meta property="og:image" content="https://hetsi0307.github.io/images/myimage.jpg">
-  <meta property="og:url" content="https://hetsi0307.github.io/">
-  <meta property="og:type" content="website">
-
-  <!-- ✅ Twitter Card tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hetsi Tewar Portfolio | WordPress Developer">
-  <meta name="twitter:description" content="Explore my projects, skills, and experience as a WordPress Developer from Baroda.">
-  <meta name="twitter:image" content="https://hetsi0307.github.io/images/myimage.jpg">
-
-  <!-- Keywords (optional, not a strong ranking factor, but fine to include) -->
-  <meta name="keywords" content="Hetsi Tewar portfolio, WordPress Developer, Baroda web developer, website designer, web development projects" />
-
-  <!-- Font Awesome for brand icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Google site verification -->
-  <meta name="google-site-verification" content="8AmrMMlN6zRmI7KKZZcN0dS_fgdq6knham7-eqs9K6E" />
-
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="assets/css/main.css" />
-
-  <!-- ✅ Extra styles for Projects Section -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hetsi Tewar - WordPress Developer</title>
   <style>
-    /* Projects Section */
-    #projects {
-      margin-top: 4rem;
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .project-card .image img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .project-card h3 {
-      margin-top: 0;
-      font-size: 1.4rem;
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
       color: #333;
     }
 
-    .project-card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #555;
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #2ef5c6;
+      padding: 60px;
+      min-height: 100vh;
+    }
+
+    .hero-text {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero img {
+      flex: 1;
+      max-width: 500px;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* Section styling */
+    section {
+      padding: 60px 80px;
+      background: #fff;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #2ef5c6;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .experience, .skills, .contact {
+      margin-top: 20px;
+    }
+
+    .experience h3 {
+      font-size: 22px;
+      color: #0073e6;
+      margin-bottom: 5px;
+    }
+
+    .experience p {
+      margin-bottom: 10px;
+    }
+
+    .skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .skills ul li {
+      background: #2ef5c6;
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-right: 15px;
+      color: #0073e6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      margin-top: 40px;
     }
   </style>
 </head>
-<body class="is-preload">
+<body>
 
-  <div id="wrapper">
-
-    <!-- Intro -->
-    <section class="intro">
-      <header>
-        <h1>Hetsi Tewar - WordPress Developer in Baroda</h1>
-        <p>WordPress Developer | Website Designer | Tech Enthusiast</p>
-        <ul class="actions">
-          <li><a href="#about" class="arrow scrolly"><span class="label">Next</span></a></li>
-        </ul>
-      </header>
-      <div class="content">
-        <span class="image fill" data-position="center">
-          <img src="images/myimage.jpg" alt="Hetsi Tewar - WordPress Developer">
-        </span>
-      </div>
-    </section>
-
-    <!-- About Me -->
-    <section id="about">
-      <header>
-        <h2>About Me</h2>
-      </header>
-      <div class="content">
-        <p>I’m currently a WordPress Developer at <strong>SEO Webplanet Solution</strong>, with a Bachelor's degree in <strong>Computer Engineering</strong> from <strong>SVIT</strong> (CGPA: 7.18). I enjoy turning ideas into elegant and functional digital solutions. With a strong foundation in web development, I strive to craft engaging user experiences and scalable WordPress sites.</p>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section>
-      <header>
-        <h2>Skills</h2>
-      </header>
-      <div class="content">
-        <ul class="feature-icons">
-          <li class="icon solid fa-code">HTML5, CSS3, JavaScript</li>
-          <li class="icon solid fa-code">PHP, MySQL</li>
-          <li class="icon brands fa-wordpress">WordPress (Themes, Plugins)</li>
-          <li class="icon solid fa-terminal">Java, Python</li>
-          <li class="icon solid fa-mobile-alt">Responsive Design</li>
-          <li class="icon brands fa-github">Git & GitHub</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section>
-      <header>
-        <h2>Experience</h2>
-      </header>
-      <div class="content">
-        <!-- Current Job -->
-        <h3>WordPress Developer | Website Designer</h3>
-        <p><strong>SEO Webplanet Solution</strong> — 2025-Present<br>
-        Designing and developing custom WordPress websites, optimizing themes, and implementing responsive, SEO-friendly designs for clients.</p>
-
-        <!-- Previous Job -->
-        <h3>WordPress Developer Intern</h3>
-        <p><strong>Maskoid Technology</strong> — 2024-2025<br>
-        Worked on custom WordPress websites, optimizing themes, and dynamic UI using Elementor and core web technologies.</p>
-      </div>
-    </section>
-
-    <!-- ✅ New Projects Section -->
-    <section id="projects">
-      <header>
-        <h2>Projects</h2>
-      </header>
-      <div class="content">
-        <div class="projects-grid">
-
-          <!-- Project 1: Homeopathy -->
-          <article class="project-card">
-            <span class="image">
-              <img src="images/homeopathy.png" alt="Dr. Mahavrat’s Cosmic Homeo Healing Centre" />
-            </span>
-            <h3>Dr. Mahavrat’s Cosmic Homeo Healing Centre</h3>
-            <p>
-              Built a complete website for a renowned homeopathy & holistic healing clinic in Vadodara.  
-              Features include <strong>homeopathy services</strong>, <strong>aesthetic treatments</strong> 
-              (Radiofrequency, Skin Peels, Diode Laser), and <strong>holistic therapies</strong> 
-              like Ayurveda, Reiki, Yoga, and Naturopathy.  
-              The website ensures strong Google presence for "Dr. Mahavrat Patel".
-            </p>
-          </article>
-
-          <!-- Project 2: Maskoid -->
-          <article class="project-card">
-            <span class="image">
-              <img src="images/maskoid.png" alt="Maskoid Technology Project" />
-            </span>
-            <h3>Maskoid Technology</h3>
-            <p>
-              Contributed to a web solutions company in Vadodara specializing in 
-              <strong>SEO-friendly websites</strong> and <strong>WordPress development</strong>.  
-              Developed dynamic <strong>Service Section Pages</strong> with Elementor and 
-              custom styling to enhance user experience.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section>
-      <header>
-        <h2>Education</h2>
-      </header>
-      <div class="content">
-        <h3>B.E. in Computer Engineering</h3>
-        <p><strong>SVIT, Vasad</strong> – CGPA: 7.18<br>
-        Graduated: 2024</p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section>
-      <header>
-        <h2>Get in Touch</h2>
-      </header>
-      <div class="content">
-        <ul class="items">
-          <li>
-            <h3>Email</h3>
-            <a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a>
-          </li>
-          <li>
-            <h3>GitHub</h3>
-            <a href="https://github.com/hetsi0307">github.com/hetsi0307</a>
-          </li>
-          <li>
-            <h3>LinkedIn</h3>
-            <a href="https://linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/">linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="copyright">
-      &copy; Hetsi Tewar. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hetsi Tewar - WordPress Developer in Baroda</h1>
+      <p>WordPress Developer | Website Designer | Tech Enthusiast</p>
     </div>
+    <img src="your-photo.png" alt="Hetsi Tewar">
+  </section>
 
-  </div>
+  <!-- Experience Section -->
+  <section>
+    <h2>Experience</h2>
+    <div class="experience">
+      <h3>WordPress Developer</h3>
+      <p><strong>Freelance | 2021 - Present</strong></p>
+      <p>Developed and customized WordPress websites for clients in healthcare, tech, and business sectors. Specialized in responsive, SEO-friendly websites.</p>
+    </div>
+  </section>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+  <!-- Skills Section -->
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <ul>
+        <li>WordPress Development</li>
+        <li>HTML & CSS</li>
+        <li>JavaScript Basics</li>
+        <li>SEO Optimization</li>
+        <li>Responsive Design</li>
+        <li>Website Redesign</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="mailto:your-email@example.com">Email</a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Hetsi Tewar | Portfolio Website</p>
+  </footer>
 
 </body>
 </html>
