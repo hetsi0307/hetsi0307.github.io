@@ -21,10 +21,10 @@
   <meta name="twitter:description" content="Explore my projects, skills, and experience as a WordPress Developer from Baroda.">
   <meta name="twitter:image" content="https://hetsi0307.github.io/images/myimage.jpg">
 
-  <!-- Keywords (optional) -->
+  <!-- Keywords -->
   <meta name="keywords" content="Hetsi Tewar portfolio, WordPress Developer, Baroda web developer, website designer, web development projects" />
 
-  <!-- Font Awesome for brand icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Google site verification -->
@@ -33,78 +33,75 @@
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- ✅ Custom Fixes -->
+  <!-- ✅ Custom Fix Styles -->
   <style>
-    /* Fix unwanted top white line around image */
-    .intro .content .image.fill img {
-      display: block;
-      margin: 0;
-      padding: 0;
-      border: none;
+    /* General font scaling */
+    body {
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    /* Adjust heading & paragraph font size in intro */
-    .intro header h1 {
-      font-size: 2rem; /* reduced from very large */
-      line-height: 1.3;
+    h1 { font-size: 2rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.6rem; margin-bottom: 0.8rem; }
+    h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+
+    /* Reduce section spacing */
+    section {
+      padding: 3rem 1.5rem !important;
+      margin: 0 auto;
     }
 
+    /* Intro section spacing fix */
+    .intro {
+      padding: 3rem 1rem !important;
+    }
     .intro header p {
       font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .intro header h1 {
-        font-size: 1.5rem;
-      }
-      .intro header p {
-        font-size: 0.9rem;
-      }
     }
 
     /* Projects Section */
     #projects {
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
-
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
-
     .project-card {
       background: #fff;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0px 6px 16px rgba(0,0,0,0.15);
     }
-
     .project-card .image img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      display: block;
+      border-radius: 8px;
+      margin-bottom: 0.8rem;
     }
-
     .project-card h3 {
-      margin-top: 0;
-      font-size: 1.3rem;
-      color: #333;
+      font-size: 1.2rem;
     }
-
     .project-card p {
       font-size: 0.95rem;
-      line-height: 1.5;
       color: #555;
+    }
+
+    /* Contact section font */
+    #contact, .items li {
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .copyright {
+      font-size: 0.85rem;
+      padding: 1rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -161,19 +158,17 @@
         <h2>Experience</h2>
       </header>
       <div class="content">
-        <!-- Current Job -->
         <h3>WordPress Developer | Website Designer</h3>
         <p><strong>SEO Webplanet Solution</strong> — 2025-Present<br>
         Designing and developing custom WordPress websites, optimizing themes, and implementing responsive, SEO-friendly designs for clients.</p>
 
-        <!-- Previous Job -->
         <h3>WordPress Developer Intern</h3>
         <p><strong>Maskoid Technology</strong> — 2024-2025<br>
         Worked on custom WordPress websites, optimizing themes, and dynamic UI using Elementor and core web technologies.</p>
       </div>
     </section>
 
-    <!-- ✅ Projects Section -->
+    <!-- Projects -->
     <section id="projects">
       <header>
         <h2>Projects</h2>
@@ -181,7 +176,6 @@
       <div class="content">
         <div class="projects-grid">
 
-          <!-- Project 1 -->
           <article class="project-card">
             <span class="image">
               <img src="homeopathy.png" alt="Dr. Mahavrat’s Cosmic Homeo Healing Centre" />
@@ -191,12 +185,10 @@
               Built a complete website for a renowned homeopathy & holistic healing clinic in Vadodara.  
               Features include <strong>homeopathy services</strong>, <strong>aesthetic treatments</strong> 
               (Radiofrequency, Skin Peels, Diode Laser), and <strong>holistic therapies</strong> 
-              like Ayurveda, Reiki, Yoga, and Naturopathy.  
-              The website ensures strong Google presence for "Dr. Mahavrat Patel".
+              like Ayurveda, Reiki, Yoga, and Naturopathy.
             </p>
           </article>
 
-          <!-- Project 2 -->
           <article class="project-card">
             <span class="image">
               <img src="maskoid.png" alt="Maskoid Technology" />
@@ -233,18 +225,9 @@
       </header>
       <div class="content">
         <ul class="items">
-          <li>
-            <h3>Email</h3>
-            <a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a>
-          </li>
-          <li>
-            <h3>GitHub</h3>
-            <a href="https://github.com/hetsi0307">github.com/hetsi0307</a>
-          </li>
-          <li>
-            <h3>LinkedIn</h3>
-            <a href="https://linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/">linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/</a>
-          </li>
+          <li><h3>Email</h3><a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a></li>
+          <li><h3>GitHub</h3><a href="https://github.com/hetsi0307">github.com/hetsi0307</a></li>
+          <li><h3>LinkedIn</h3><a href="https://linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/">linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/</a></li>
         </ul>
       </div>
     </section>
