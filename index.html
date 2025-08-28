@@ -8,7 +8,7 @@
   <!-- Meta description for Google search results -->
   <meta name="description" content="Official Hetsi Tewar Portfolio – WordPress Developer from Baroda. Explore my projects, skills, SEO-friendly website builder and professional experience in web development." />
 
-   <!-- ✅ Open Graph tags -->
+  <!-- ✅ Open Graph tags -->
   <meta property="og:title" content="Hetsi Tewar Portfolio | WordPress Developer">
   <meta property="og:description" content="Portfolio of Hetsi Tewar, WordPress Developer from Baroda. Explore my projects, skills, and experience.">
   <meta property="og:image" content="https://hetsi0307.github.io/images/myimage.jpg">
@@ -32,6 +32,51 @@
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- ✅ Extra styles for Projects Section -->
+  <style>
+    /* Projects Section */
+    #projects {
+      margin-top: 4rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .project-card .image img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #333;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+    }
+  </style>
 </head>
 <body class="is-preload">
 
@@ -95,6 +140,47 @@
         <h3>WordPress Developer Intern</h3>
         <p><strong>Maskoid Technology</strong> — 2024-2025<br>
         Worked on custom WordPress websites, optimizing themes, and dynamic UI using Elementor and core web technologies.</p>
+      </div>
+    </section>
+
+    <!-- ✅ New Projects Section -->
+    <section id="projects">
+      <header>
+        <h2>Projects</h2>
+      </header>
+      <div class="content">
+        <div class="projects-grid">
+
+          <!-- Project 1: Homeopathy -->
+          <article class="project-card">
+            <span class="image">
+              <img src="images/homeopathy.png" alt="Dr. Mahavrat’s Cosmic Homeo Healing Centre" />
+            </span>
+            <h3>Dr. Mahavrat’s Cosmic Homeo Healing Centre</h3>
+            <p>
+              Built a complete website for a renowned homeopathy & holistic healing clinic in Vadodara.  
+              Features include <strong>homeopathy services</strong>, <strong>aesthetic treatments</strong> 
+              (Radiofrequency, Skin Peels, Diode Laser), and <strong>holistic therapies</strong> 
+              like Ayurveda, Reiki, Yoga, and Naturopathy.  
+              The website ensures strong Google presence for "Dr. Mahavrat Patel".
+            </p>
+          </article>
+
+          <!-- Project 2: Maskoid -->
+          <article class="project-card">
+            <span class="image">
+              <img src="images/maskoid.png" alt="Maskoid Technology Project" />
+            </span>
+            <h3>Maskoid Technology</h3>
+            <p>
+              Contributed to a web solutions company in Vadodara specializing in 
+              <strong>SEO-friendly websites</strong> and <strong>WordPress development</strong>.  
+              Developed dynamic <strong>Service Section Pages</strong> with Elementor and 
+              custom styling to enhance user experience.
+            </p>
+          </article>
+
+        </div>
       </div>
     </section>
 
