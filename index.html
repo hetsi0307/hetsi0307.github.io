@@ -12,11 +12,13 @@
     <style>
       /* Project Card Styles */
       .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
+  display: grid;
+  /* Creates a single column that takes up the full width */
+  grid-template-columns: 1fr;
+  /* Adds vertical space between project cards */
+  gap: 2rem;
+  margin-top: 2rem;
+}
       .project-card {
         background: #fff;
         border-radius: 12px;
