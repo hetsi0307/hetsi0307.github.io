@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Hetsi Tewar | WordPress Developer</title>
+    <title>Hetsi Tewar Portfolio | WordPress Developer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     
@@ -30,21 +30,21 @@
         transform: translateY(-5px);
       }
       /* New: Styles for the image wrapper to make it a square */
-      .project-image-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 100%; /* Creates a square container */
-        overflow: hidden;
-      }
-      /* New: Styles the image to fit without stretching */
-      .project-image-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Prevents stretching and maintains aspect ratio */
-      }
+     .project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;        /* let height adjust naturally */
+  overflow: hidden;
+}
+
+.project-image-wrapper img {
+  position: relative;  /* remove absolute positioning */
+  width: 100%;
+  height: auto;        /* keep aspect ratio */
+  object-fit: cover;   /* or "contain" if you prefer full image */
+  display: block;      /* removes small bottom gap caused by inline-block */
+}
+
       .project-card .card-content {
         padding: 1rem;
       }
@@ -65,7 +65,7 @@
 
       <section class="intro">
         <header>
-          <h1>Hetsi Tewar</h1>
+          <h1>Hetsi Tewar Portfolio</h1>
           <p>WordPress Developer | Web Designer | Tech Enthusiast</p>
           <ul class="actions">
             <li>
