@@ -1,101 +1,91 @@
 <!DOCTYPE HTML>
-<html>
+<!-- Custom Portfolio for Hetsi Tewar - Based on "Paradigm Shift" by HTML5 UP -->
+<html lang="en">
   <head>
-    <title>Hetsi Tewar | WordPress Developer</title>
+    <title>Hetsi Tewar Portfolio | WordPress Developer & Web Designer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Official Hetsi Tewar Portfolio – WordPress Developer & Website Designer in Vadodara/Baroda. See projects, skills, and experience." />
+    <meta name="keywords" content="Hetsi Tewar Portfolio, WordPress Developer Baroda, Website Designer Vadodara, SEO Webplanet Solution, Maskoid Technology" />
+    <meta name="author" content="Hetsi Tewar" />
+
+    <!-- Social Preview -->
+    <meta property="og:title" content="Hetsi Tewar Portfolio | WordPress Developer" />
+    <meta property="og:description" content="Portfolio of Hetsi Tewar – WordPress Developer & Website Designer from Vadodara/Baroda." />
+    <meta property="og:image" content="https://hetsi0307.github.io/images/myimage.jpg" />
+    <meta property="og:url" content="https://hetsi0307.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Simple project card styles (keeps with your theme) -->
     <style>
-      /* Project Card Styles */
-      .projects {
+      #projects .features {
         display: grid;
-        /* Creates a single column that takes up the full width */
-        grid-template-columns: 1fr;
-        /* Adds vertical space between project cards */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
-        margin-top: 2rem;
       }
-      .project-card {
+      #projects article {
         background: #fff;
-        border-radius: 12px;
+        border-radius: 14px;
         overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        /* New: Adds the 1px black border around the card */
-        border: 1px solid black;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        transition: transform .25s ease;
       }
-      .project-card:hover {
-        transform: translateY(-5px);
-      }
-      /* New: Styles for the image wrapper to make it a square */
-      .project-image-wrapper {
-        position: relative;
+      #projects article:hover { transform: translateY(-6px); }
+      #projects article img {
         width: 100%;
-        padding-top: 100%; /* Creates a square container */
-        overflow: hidden;
+        height: 220px;
+        object-fit: cover;
+        display: block;
       }
-      /* New: Styles the image to fit without stretching */
-      .project-image-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Prevents stretching and maintains aspect ratio */
-      }
-      .project-card .card-content {
-        padding: 1rem;
-      }
-      .project-card h3 {
-        margin: 0 0 0.5rem;
-        font-size: 1.2rem;
-        color: #333;
-      }
-      .project-card p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #555;
-      }
+      #projects article h3 { margin: 0.9rem 1rem 0.4rem; }
+      #projects article p { margin: 0 1rem 1.2rem; color: #555; }
     </style>
   </head>
+
   <body class="is-preload">
     <div id="wrapper">
 
+      <!-- Intro -->
       <section class="intro">
         <header>
           <h1>Hetsi Tewar</h1>
-          <p>WordPress Developer | Web Designer | Tech Enthusiast</p>
+          <p>WordPress Developer | Website Designer | Tech Enthusiast</p>
+          <h2 style="font-size:18px; margin-top:10px; color:#666;">Official Hetsi Tewar Portfolio</h2>
           <ul class="actions">
-            <li>
-              <a href="#about" class="arrow scrolly"><span class="label">Next</span></a>
-            </li>
+            <li><a href="#about" class="arrow scrolly"><span class="label">Next</span></a></li>
           </ul>
         </header>
         <div class="content">
           <span class="image fill" data-position="center">
-            <img src="images/myimage.jpg" alt="Hetsi Tewar">
+            <img src="images/myimage.jpg" alt="Hetsi Tewar Portfolio Profile Picture">
           </span>
         </div>
       </section>
 
+      <!-- About Me -->
       <section id="about">
         <header>
           <h2>About Me</h2>
         </header>
         <div class="content">
           <p>
-            I’m currently a WordPress Developer at <strong>SEO Webplanet Solution</strong>, 
-            with a Bachelor's degree in <strong>Computer Engineering</strong> from 
-            <strong>SVIT</strong> (CGPA: 7.18). 
-            I enjoy turning ideas into elegant and functional digital solutions. 
-            With a strong foundation in web development, I strive to craft engaging user experiences 
-            and scalable WordPress sites.
+            I’m a WordPress Developer & Website Designer at
+            <strong>SEO Webplanet Solution</strong> in Vadodara (Baroda).
+            I hold a B.E. in <strong>Computer Engineering</strong> from
+            <strong>SVIT</strong> (CGPA: 7.18). I love turning ideas into clean,
+            responsive, SEO-friendly websites with great user experience.
           </p>
         </div>
       </section>
 
+      <!-- Skills -->
       <section>
         <header>
           <h2>Skills</h2>
@@ -112,58 +102,62 @@
         </div>
       </section>
 
+      <!-- Experience -->
       <section>
         <header>
           <h2>Experience</h2>
         </header>
         <div class="content">
-          <h3>WordPress Developer</h3>
+          <h3>WordPress Developer | Website Designer</h3>
           <p>
-            <strong>SEO Webplanet Solution</strong> — 2025 (Current)<br>
-            Building and designing WordPress websites, focusing on SEO optimization, responsive layouts, and client-focused solutions.
+            <strong>SEO Webplanet Solution</strong> — 2025–Present<br>
+            Designing and building custom WordPress sites, optimizing themes, and creating
+            responsive, SEO-friendly designs for clients.
           </p>
 
           <h3>WordPress Developer Intern</h3>
           <p>
-            <strong>Maskoid Technology</strong> — 2025<br>
-            Worked on custom WordPress websites, optimized themes, and created service section pages using Elementor and core web technologies.
+            <strong>Maskoid Technology</strong> — 2024–2025<br>
+            Contributed to custom WordPress websites, optimized themes, and built dynamic UI
+            sections using Elementor and core web technologies.
           </p>
         </div>
       </section>
 
-      <section>
+      <!-- Projects (your two real projects only, no links) -->
+      <section id="projects">
         <header>
           <h2>Projects</h2>
         </header>
-        <div class="content projects">
-          <div class="project-card">
-            <div class="project-image-wrapper">
-              <img src="images/homeopathy.png" alt="Homeopathy Clinic Website">
-            </div>
-            <div class="card-content">
-              <h3>Homeopathy Clinic Website</h3>
+        <div class="content">
+          <div class="features">
+            <!-- Project 1: Homeopathy Clinic -->
+            <article>
+              <img src="images/homeopathy.png" alt="Homeopathy Clinic Website - screenshot">
+              <h3>Homeopathy Clinic Website (Vadodara)</h3>
               <p>
-                Complete website developed for Dr. Mahavrat S Patel, senior doctor in Vadodara.  
-                Includes homeopathy, aesthetic treatments (radiofrequency, skin peels, diode laser), and holistic healing (Ayurveda, Reiki, Yoga, Naturopathy).
+                Complete website for a senior doctor in Vadodara (near Vasna D-Mart Road).
+                Covers homeopathy services, aesthetic treatments (radiofrequency, skin peels,
+                diode laser), and holistic healing (Ayurveda, Reiki, Yoga, Naturopathy).
+                I developed the entire site end-to-end.
               </p>
-            </div>
-          </div>
+            </article>
 
-          <div class="project-card">
-            <div class="project-image-wrapper">
-              <img src="images/maskoid.png" alt="Maskoid Technology Project">
-            </div>
-            <div class="card-content">
-              <h3>Maskoid Technology</h3>
+            <!-- Project 2: Maskoid Technology -->
+            <article>
+              <img src="images/maskoid.png" alt="Maskoid Technology Website - service pages screenshot">
+              <h3>Maskoid Technology (Vadodara)</h3>
               <p>
-                Contributed to company website during internship.  
-                Focused on service section pages for an SEO-friendly WordPress site builder company located in Vadodara.
+                Company focused on SEO-friendly websites and WordPress development.
+                During my 3-month internship I built the <strong>Service section pages</strong>,
+                ensuring clean layout, responsiveness, and consistency with the brand.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
+      <!-- Education -->
       <section>
         <header>
           <h2>Education</h2>
@@ -177,6 +171,7 @@
         </div>
       </section>
 
+      <!-- Contact -->
       <section>
         <header>
           <h2>Get in Touch</h2>
@@ -193,19 +188,21 @@
             </li>
             <li>
               <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/hetsi-tewar-139239231">linkedin.com/in/hetsi-tewar-139239231</a>
+              <a href="https://linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/">
+                linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/
+              </a>
             </li>
           </ul>
         </div>
       </section>
 
+      <!-- Footer -->
       <div class="copyright">
-        &copy; Hetsi Tewar. Design adapted from 
-        <a href="https://html5up.net">HTML5 UP</a>.
+        &copy; Hetsi Tewar. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.
       </div>
-
     </div>
 
+    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -214,3 +211,4 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
+
