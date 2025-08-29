@@ -1,14 +1,54 @@
 <!DOCTYPE HTML>
-<!-- Custom Portfolio for Hetsi Tewar - Based on "Paradigm Shift" by HTML5 UP -->
 <html>
   <head>
-    <title>Hetsi Tewar | WordPress Developer</title>
+    <title>Hetsi Tewar | WordPress Developer in Vadodara | Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    
-    <!-- Font Awesome for brand icons -->
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Hetsi Tewar, a WordPress Developer and Website Designer based in Vadodara. Explore skills, projects, and professional experience.">
+    <meta name="keywords" content="Hetsi Tewar, WordPress Developer Vadodara, Website Designer, Portfolio, SEO WebPlanet Solution, Maskoid Technology, Homeopathy Website">
+    <meta name="author" content="Hetsi Tewar">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      /* Project Cards Styling */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .project-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.2s;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+      .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .project-card .content {
+        padding: 1rem;
+      }
+      .project-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.2rem;
+        color: #333;
+      }
+      .project-card p {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.4;
+      }
+    </style>
   </head>
   <body class="is-preload">
     <div id="wrapper">
@@ -17,11 +57,9 @@
       <section class="intro">
         <header>
           <h1>Hetsi Tewar</h1>
-          <p>WordPress Developer Intern | Web Designer | Tech Enthusiast</p>
+          <p>WordPress Developer | Website Designer | Tech Enthusiast</p>
           <ul class="actions">
-            <li>
-              <a href="#about" class="arrow scrolly"><span class="label">Next</span></a>
-            </li>
+            <li><a href="#about" class="arrow scrolly"><span class="label">Next</span></a></li>
           </ul>
         </header>
         <div class="content">
@@ -31,11 +69,9 @@
         </div>
       </section>
 
-      <!-- About Me -->
+      <!-- About -->
       <section id="about">
-        <header>
-          <h2>About Me</h2>
-        </header>
+        <header><h2>About Me</h2></header>
         <div class="content">
           <p>
             I’m currently a WordPress Developer at <strong>SEO WebPlanet Solution</strong>, 
@@ -50,9 +86,7 @@
 
       <!-- Skills -->
       <section>
-        <header>
-          <h2>Skills</h2>
-        </header>
+        <header><h2>Skills</h2></header>
         <div class="content">
           <ul class="feature-icons">
             <li class="icon solid fa-code">HTML5, CSS3, JavaScript</li>
@@ -67,9 +101,7 @@
 
       <!-- Experience -->
       <section>
-        <header>
-          <h2>Experience</h2>
-        </header>
+        <header><h2>Experience</h2></header>
         <div class="content">
           <h3>WordPress Developer | Website Designer</h3>
           <p>
@@ -87,11 +119,44 @@
         </div>
       </section>
 
+      <!-- Projects -->
+      <section>
+        <header><h2>Projects</h2></header>
+        <div class="content projects">
+
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img src="images/homeopathy.png" alt="Homeopathy Clinic Website">
+            <div class="content">
+              <h3>Homeopathy Clinic Website</h3>
+              <p>
+                A full website developed for <strong>Dr. Mahavrat S. Patel</strong>, 
+                a senior homeopathy doctor in Vadodara (near Vasna D-Mart Road).  
+                The clinic also provides aesthetic treatments (radiofrequency, skin peels, diode laser) 
+                and holistic healing therapies (Ayurveda, Reiki, Yoga, Naturopathy).
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="images/maskoid.png" alt="Maskoid Technology Website">
+            <div class="content">
+              <h3>Maskoid Technology</h3>
+              <p>
+                Contributed to building <strong>service section pages</strong> for Maskoid Technology, 
+                a Vadodara-based IT company that develops SEO-friendly websites using WordPress.  
+                My role focused on service content structuring and UI design.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <!-- Education -->
       <section>
-        <header>
-          <h2>Education</h2>
-        </header>
+        <header><h2>Education</h2></header>
         <div class="content">
           <h3>B.E. in Computer Engineering</h3>
           <p>
@@ -103,31 +168,19 @@
 
       <!-- Contact -->
       <section>
-        <header>
-          <h2>Get in Touch</h2>
-        </header>
+        <header><h2>Get in Touch</h2></header>
         <div class="content">
           <ul class="items">
-            <li>
-              <h3>Email</h3>
-              <a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a>
-            </li>
-            <li>
-              <h3>GitHub</h3>
-              <a href="https://github.com/hetsi0307">github.com/hetsi0307</a>
-            </li>
-            <li>
-              <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/hetsi-tewar-139239231">linkedin.com/in/hetsi-tewar-139239231</a>
-            </li>
+            <li><h3>Email</h3><a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a></li>
+            <li><h3>GitHub</h3><a href="https://github.com/hetsi0307">github.com/hetsi0307</a></li>
+            <li><h3>LinkedIn</h3><a href="https://linkedin.com/in/hetsi-tewar-139239231">linkedin.com/in/hetsi-tewar-139239231</a></li>
           </ul>
         </div>
       </section>
 
       <!-- Footer -->
       <div class="copyright">
-        &copy; Hetsi Tewar. Design adapted from 
-        <a href="https://html5up.net">HTML5 UP</a>.
+        &copy; Hetsi Tewar. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.
       </div>
 
     </div>
