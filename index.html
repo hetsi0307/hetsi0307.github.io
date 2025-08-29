@@ -30,19 +30,19 @@
         transform: translateY(-5px);
       }
       /* New: Styles for the image wrapper to make it a square */
-     .project-image-wrapper {
+    .project-image-wrapper {
   position: relative;
   width: 100%;
-  height: auto;        /* let height adjust naturally */
+  padding-top: 0;   /* ⬅️ change this */
   overflow: hidden;
 }
 
+
 .project-image-wrapper img {
-  position: relative;  /* remove absolute positioning */
   width: 100%;
-  height: auto;        /* keep aspect ratio */
-  object-fit: cover;   /* or "contain" if you prefer full image */
-  display: block;      /* removes small bottom gap caused by inline-block */
+  height: auto;
+  display: block;
+  object-fit: cover; /* or contain if you don’t want cropping */
 }
 
       .project-card .card-content {
