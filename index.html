@@ -1,38 +1,49 @@
 <!DOCTYPE HTML>
-<!-- Custom Portfolio for Hetsi Tewar - Based on "Paradigm Shift" by HTML5 UP -->
 <html>
   <head>
     <title>Hetsi Tewar | WordPress Developer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     
-    <!-- Font Awesome for brand icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
       /* Project Card Styles */
       .projects {
-  display: grid;
-  /* Creates a single column that takes up the full width */
-  grid-template-columns: 1fr;
-  /* Adds vertical space between project cards */
-  gap: 2rem;
-  margin-top: 2rem;
-}
+        display: grid;
+        /* Creates a single column that takes up the full width */
+        grid-template-columns: 1fr;
+        /* Adds vertical space between project cards */
+        gap: 2rem;
+        margin-top: 2rem;
+      }
       .project-card {
         background: #fff;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         transition: transform 0.3s ease;
+        /* New: Adds the 1px black border around the card */
+        border: 1px solid black;
       }
       .project-card:hover {
         transform: translateY(-5px);
       }
-      .project-card img {
+      /* New: Styles for the image wrapper to make it a square */
+      .project-image-wrapper {
+        position: relative;
         width: 100%;
-        height: 200px;
-        object-fit: cover;
+        padding-top: 100%; /* Creates a square container */
+        overflow: hidden;
+      }
+      /* New: Styles the image to fit without stretching */
+      .project-image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Prevents stretching and maintains aspect ratio */
       }
       .project-card .card-content {
         padding: 1rem;
@@ -52,7 +63,6 @@
   <body class="is-preload">
     <div id="wrapper">
 
-      <!-- Intro -->
       <section class="intro">
         <header>
           <h1>Hetsi Tewar</h1>
@@ -70,7 +80,6 @@
         </div>
       </section>
 
-      <!-- About Me -->
       <section id="about">
         <header>
           <h2>About Me</h2>
@@ -87,7 +96,6 @@
         </div>
       </section>
 
-      <!-- Skills -->
       <section>
         <header>
           <h2>Skills</h2>
@@ -104,7 +112,6 @@
         </div>
       </section>
 
-      <!-- Experience -->
       <section>
         <header>
           <h2>Experience</h2>
@@ -124,15 +131,15 @@
         </div>
       </section>
 
-      <!-- Projects -->
       <section>
         <header>
           <h2>Projects</h2>
         </header>
         <div class="content projects">
-          <!-- Project 1 -->
           <div class="project-card">
-            <img src="images/homeopathy.png" alt="Homeopathy Clinic Website">
+            <div class="project-image-wrapper">
+              <img src="images/homeopathy.png" alt="Homeopathy Clinic Website">
+            </div>
             <div class="card-content">
               <h3>Homeopathy Clinic Website</h3>
               <p>
@@ -142,9 +149,10 @@
             </div>
           </div>
 
-          <!-- Project 2 -->
           <div class="project-card">
-            <img src="images/maskoid.png" alt="Maskoid Technology Project">
+            <div class="project-image-wrapper">
+              <img src="images/maskoid.png" alt="Maskoid Technology Project">
+            </div>
             <div class="card-content">
               <h3>Maskoid Technology</h3>
               <p>
@@ -156,7 +164,6 @@
         </div>
       </section>
 
-      <!-- Education -->
       <section>
         <header>
           <h2>Education</h2>
@@ -170,7 +177,6 @@
         </div>
       </section>
 
-      <!-- Contact -->
       <section>
         <header>
           <h2>Get in Touch</h2>
@@ -193,7 +199,6 @@
         </div>
       </section>
 
-      <!-- Footer -->
       <div class="copyright">
         &copy; Hetsi Tewar. Design adapted from 
         <a href="https://html5up.net">HTML5 UP</a>.
@@ -201,7 +206,6 @@
 
     </div>
 
-    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
