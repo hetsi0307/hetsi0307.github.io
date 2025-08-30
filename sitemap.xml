@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://hetsi0307.github.io/</loc>
-    <lastmod>2025-08-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-08-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://hetsi0307.github.io/about.html</loc>
-    <lastmod>2025-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hetsi0307.github.io/projects.html</loc>
-    <lastmod>2025-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hetsi0307.github.io/contact.html</loc>
-    <lastmod>2025-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+
+    <!-- Key images on the page -->
+    <image:image>
+      <image:loc>https://hetsi0307.github.io/images/myimage.jpg</image:loc>
+      <image:caption>Portrait of Hetsi Tewar, WordPress Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hetsi0307.github.io/images/homeopathy.png</image:loc>
+      <image:caption>Homeopathy Clinic Website project screenshot</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hetsi0307.github.io/images/maskoid.png</image:loc>
+      <image:caption>Maskoid Technology website project screenshot</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hetsi0307.github.io/images/blog1.png</image:loc>
+      <image:caption>Laptop screen showing the WordPress logo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hetsi0307.github.io/images/blog2.jpg</image:loc>
+      <image:caption>WordPress SEO practices blog cover image</image:caption>
+    </image:image>
   </url>
 </urlset>
-
