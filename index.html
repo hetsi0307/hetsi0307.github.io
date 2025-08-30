@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-      /* ---- Layout wrapper (40% + 80% = 120% overflow) -> fix ---- */
-      #wrapper { grid-template-columns: 35% 65%; }
+      /* ---- Layout wrapper (fixed from 40% 80% = 120%) ---- */
+      #wrapper {
+        grid-template-columns: 35% 65%;
+      }
 
       /* ---- Project Card Styles ---- */
       .projects {
@@ -35,42 +37,39 @@
       .project-card h3 { margin: 0 0 0.5rem; font-size: 1.2rem; color: #333; }
       .project-card p { margin: 0; font-size: 0.95rem; color: #555; }
 
-      /* ---- BLOG SECTION (ROW layout using CSS Grid) ---- */
-      /* The theme sets .content to a narrow max-width; so we avoid using .content here */
-      section .blogs{
-        width: 100% !important;
-        max-width: 100% !important;
+      /* ---- Blog Section (ROW layout via CSS Grid) ---- */
+      .content.blogs{
         display: grid !important;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 2rem;
         margin-top: 2rem;
         align-items: stretch;
       }
-      section .blogs .blog-card{
+      .content.blogs .blog-card{
         background: #fff;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         border: 1px solid black;
-        width: auto !important;        /* defeats any width:100% card rule */
-        margin: 0 !important;          /* defeats theme margins that cause stacking */
+        width: auto !important;     /* override any theme 100% rules */
+        margin: 0 !important;
         transition: transform 0.3s ease;
       }
-      section .blogs .blog-card:hover{ transform: translateY(-5px); }
-      section .blogs .blog-card img{
+      .content.blogs .blog-card:hover{ transform: translateY(-5px); }
+      .content.blogs .blog-card img{
         width: 100%;
         height: 200px;
         object-fit: cover;
         display: block;
       }
-      section .blogs .card-content{ padding: 1rem; }
-      section .blogs h3{ margin: 0 0 0.5rem; font-size: 1.3rem; color: #333; }
-      section .blogs p{ font-size: 0.95rem; color: #555; }
-      section .blogs .author{
+      .content.blogs .card-content{ padding: 1rem; }
+      .content.blogs h3{ margin: 0 0 0.5rem; font-size: 1.3rem; color: #333; }
+      .content.blogs p{ font-size: 0.95rem; color: #555; }
+      .content.blogs .author{
         display: flex; align-items: center; margin-top: 1rem;
         font-size: 0.9rem; color: #666;
       }
-      section .blogs .author img{
+      .content.blogs .author img{
         width: 35px; height: 35px; border-radius: 50%; margin-right: 10px;
       }
 
@@ -179,10 +178,10 @@
         </div>
       </section>
 
-      <!-- Blog (ROW layout; no .content on the wrapper) -->
+      <!-- Blog (ROW layout) -->
       <section>
         <header><h2>Blog</h2></header>
-        <div class="blogs">
+        <div class="content blogs">
           <!-- Blog 1 -->
           <div class="blog-card">
             <img src="images/blog1.jpg" alt="Blog 1">
