@@ -4,14 +4,16 @@
     <title>Hetsi Tewar Portfolio | WordPress Developer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
+      /* ---- Layout wrapper (fixed from 40% 80% = 120%) ---- */
       #wrapper {
-        grid-template-columns: 40% 80%;
+        grid-template-columns: 35% 65%;
       }
-      /* Project Card Styles */
+
+      /* ---- Project Card Styles ---- */
       .projects {
         display: grid;
         grid-template-columns: 1fr;
@@ -26,108 +28,54 @@
         transition: transform 0.3s ease;
         border: 1px solid black;
       }
-      .project-card:hover {
-        transform: translateY(-5px);
-      }
-      .project-image-wrapper {
-        position: relative;
-        width: 100%;
-        padding-top: 0;
-        overflow: hidden;
-      }
-      .project-image-wrapper img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-      }
-      .project-link {
-        display: inline-block;
-        margin-top: 8px;
-        color: #007bff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      .project-link:hover {
-        text-decoration: underline;
-        color: #0056b3;
-      }
-      .project-card .card-content {
-        padding: 1rem;
-      }
-      .project-card h3 {
-        margin: 0 0 0.5rem;
-        font-size: 1.2rem;
-        color: #333;
-      }
-      .project-card p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #555;
-      }
-      /* Blog Section - Updated for Row Layout */
-      .blogs {
-        display: flex;
-        flex-direction: row;      /* Ensures blog cards are in a row */
-        gap: 2rem;                /* Spacing between cards */
+      .project-card:hover { transform: translateY(-5px); }
+      .project-image-wrapper { position: relative; width: 100%; padding-top: 0; overflow: hidden; }
+      .project-image-wrapper img { width: 100%; height: auto; display: block; object-fit: cover; }
+      .project-link { display: inline-block; margin-top: 8px; color: #007bff; text-decoration: none; font-weight: bold; }
+      .project-link:hover { text-decoration: underline; color: #0056b3; }
+      .project-card .card-content { padding: 1rem; }
+      .project-card h3 { margin: 0 0 0.5rem; font-size: 1.2rem; color: #333; }
+      .project-card p { margin: 0; font-size: 0.95rem; color: #555; }
+
+      /* ---- Blog Section (ROW layout via CSS Grid) ---- */
+      .content.blogs{
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
         margin-top: 2rem;
-        flex-wrap: wrap;          /* Allows wrapping on smaller screens */
-        justify-content: flex-start;
+        align-items: stretch;
       }
-      .blog-card {
+      .content.blogs .blog-card{
         background: #fff;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         border: 1px solid black;
-        flex: 0 1 380px;        /* Controls width and responsiveness */
-        min-width: 300px;
-        max-width: 380px;
+        width: auto !important;     /* override any theme 100% rules */
+        margin: 0 !important;
         transition: transform 0.3s ease;
-        margin-bottom: 2rem;    /* Space when wrapping */
       }
-      .blog-card:hover {
-        transform: translateY(-5px);
-      }
-      .blog-card img {
+      .content.blogs .blog-card:hover{ transform: translateY(-5px); }
+      .content.blogs .blog-card img{
         width: 100%;
         height: 200px;
         object-fit: cover;
+        display: block;
       }
-      .blog-card .card-content {
-        padding: 1rem;
+      .content.blogs .card-content{ padding: 1rem; }
+      .content.blogs h3{ margin: 0 0 0.5rem; font-size: 1.3rem; color: #333; }
+      .content.blogs p{ font-size: 0.95rem; color: #555; }
+      .content.blogs .author{
+        display: flex; align-items: center; margin-top: 1rem;
+        font-size: 0.9rem; color: #666;
       }
-      .blog-card h3 {
-        margin: 0 0 0.5rem;
-        font-size: 1.3rem;
-        color: #333;
+      .content.blogs .author img{
+        width: 35px; height: 35px; border-radius: 50%; margin-right: 10px;
       }
-      .blog-card p {
-        font-size: 0.95rem;
-        color: #555;
-      }
-      .author {
-        display: flex;
-        align-items: center;
-        margin-top: 1rem;
-        font-size: 0.9rem;
-        color: #666;
-      }
-      .author img {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-      /* Responsive for Mobile */
-      @media (max-width: 900px) {
-        .blogs {
-          flex-direction: column;
-        }
-        .blog-card {
-          max-width: 100%;
-          min-width: unset;
-        }
+
+      /* ---- Responsive ---- */
+      @media (max-width: 900px){
+        #wrapper { grid-template-columns: 1fr; } /* stack main layout on small screens */
       }
     </style>
   </head>
@@ -139,9 +87,7 @@
           <h1>Hetsi Tewar Portfolio</h1>
           <p>WordPress Developer | Web Designer | Tech Enthusiast</p>
           <ul class="actions">
-            <li>
-              <a href="#about" class="arrow scrolly"><span class="label">Next</span></a>
-            </li>
+            <li><a href="#about" class="arrow scrolly"><span class="label">Next</span></a></li>
           </ul>
         </header>
         <div class="content">
@@ -150,11 +96,10 @@
           </span>
         </div>
       </section>
+
       <!-- About -->
       <section id="about">
-        <header>
-          <h2>About Me</h2>
-        </header>
+        <header><h2>About Me</h2></header>
         <div class="content">
           <p>
             I’m currently a WordPress Developer at <strong>SEO Webplanet Solution</strong>, 
@@ -166,11 +111,10 @@
           </p>
         </div>
       </section>
+
       <!-- Skills -->
       <section>
-        <header>
-          <h2>Skills</h2>
-        </header>
+        <header><h2>Skills</h2></header>
         <div class="content">
           <ul class="feature-icons">
             <li class="icon solid fa-code">HTML5, CSS3, JavaScript</li>
@@ -182,11 +126,10 @@
           </ul>
         </div>
       </section>
+
       <!-- Experience -->
       <section>
-        <header>
-          <h2>Experience</h2>
-        </header>
+        <header><h2>Experience</h2></header>
         <div class="content">
           <h3>WordPress Developer</h3>
           <p>
@@ -200,11 +143,10 @@
           </p>
         </div>
       </section>
+
       <!-- Projects -->
       <section>
-        <header>
-          <h2>Projects</h2>
-        </header>
+        <header><h2>Projects</h2></header>
         <div class="content projects">
           <div class="project-card">
             <div class="project-image-wrapper">
@@ -216,11 +158,10 @@
                 Complete website developed for Dr. Mahavrat S Patel, senior doctor in Vadodara.  
                 Includes homeopathy, aesthetic treatments (radiofrequency, skin peels, diode laser), and holistic healing (Ayurveda, Reiki, Yoga, Naturopathy).
               </p>
-              <a href="https://www.homeopathyhealing.net/" target="_blank" class="project-link">
-                   <b> View Full Project </b>
-              </a>
+              <a href="https://www.homeopathyhealing.net/" target="_blank" class="project-link"><b> View Full Project </b></a>
             </div>
           </div>
+
           <div class="project-card">
             <div class="project-image-wrapper">
               <img src="images/maskoid.png" alt="Maskoid Technology Project">
@@ -231,18 +172,15 @@
                 Contributed to company website during internship.  
                 Focused on service section pages for an SEO-friendly WordPress site builder company located in Vadodara.
               </p>
-              <a href="https://maskoid.com/" target="_blank" class="project-link">
-                   <b> View Full Project</b>
-              </a>
+              <a href="https://maskoid.com/" target="_blank" class="project-link"><b> View Full Project</b></a>
             </div>
           </div>
         </div>
       </section>
-      <!-- Blog Section START: UPDATED ROW LAYOUT -->
+
+      <!-- Blog (ROW layout) -->
       <section>
-        <header>
-          <h2>Blog</h2>
-        </header>
+        <header><h2>Blog</h2></header>
         <div class="content blogs">
           <!-- Blog 1 -->
           <div class="blog-card">
@@ -253,10 +191,10 @@
                 Discover why WordPress powers over 40% of the web and how it can help your business grow with flexibility and SEO benefits.
               </p>
               <div class="author">
-                  <img src="images/myimage.jpg" alt="Hetsi Tewar">
+                <img src="images/myimage.jpg" alt="Hetsi Tewar">
                 <span>By <strong>Hetsi Tewar</strong></span>
               </div>
-              <a href="https://www.bluehost.in/blog/why-wordpress-10-reasons-you-need-to-know/" class="project-link">Read More</a>
+              <a href="https://www.bluehost.in/blog/why-wordpress-10-reasons-you-need-to-know/" class="project-link" target="_blank" rel="noopener">Read More</a>
             </div>
           </div>
           <!-- Blog 2 -->
@@ -268,20 +206,18 @@
                 Learn the latest SEO strategies to rank your WordPress site higher on Google and drive more organic traffic effectively.
               </p>
               <div class="author">
-                  <img src="images/myimage.jpg" alt="Hetsi Tewar">
+                <img src="images/myimage.jpg" alt="Hetsi Tewar">
                 <span>By <strong>Hetsi Tewar</strong></span>
               </div>
-              <a href="https://zapier.com/blog/best-wordpress-seo-plugins/" class="project-link">Read More</a>
+              <a href="https://zapier.com/blog/best-wordpress-seo-plugins/" class="project-link" target="_blank" rel="noopener">Read More</a>
             </div>
           </div>
         </div>
       </section>
-      <!-- Blog Section END -->
+
       <!-- Education -->
       <section>
-        <header>
-          <h2>Education</h2>
-        </header>
+        <header><h2>Education</h2></header>
         <div class="content">
           <h3>B.E. in Computer Engineering</h3>
           <p>
@@ -290,11 +226,10 @@
           </p>
         </div>
       </section>
+
       <!-- Contact -->
       <section>
-        <header>
-          <h2>Get in Touch</h2>
-        </header>
+        <header><h2>Get in Touch</h2></header>
         <div class="content">
           <ul class="items">
             <li>
@@ -312,11 +247,12 @@
           </ul>
         </div>
       </section>
+
       <div class="copyright">
-        &copy; Hetsi Tewar. Design adapted from 
-        <a href="https://html5up.net">HTML5 UP</a>.
+        &copy; Hetsi Tewar. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.
       </div>
     </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
