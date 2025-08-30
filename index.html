@@ -11,7 +11,6 @@
       #wrapper {
         grid-template-columns: 40% 80%;
       }
-
       /* Project Card Styles */
       .projects {
         display: grid;
@@ -30,7 +29,6 @@
       .project-card:hover {
         transform: translateY(-5px);
       }
-
       .project-image-wrapper {
         position: relative;
         width: 100%;
@@ -43,7 +41,6 @@
         display: block;
         object-fit: cover;
       }
-
       .project-link {
         display: inline-block;
         margin-top: 8px;
@@ -55,7 +52,6 @@
         text-decoration: underline;
         color: #0056b3;
       }
-
       .project-card .card-content {
         padding: 1rem;
       }
@@ -69,13 +65,14 @@
         font-size: 0.95rem;
         color: #555;
       }
-
-      /* Blog Section */
+      /* Blog Section - Updated for Row Layout */
       .blogs {
         display: flex;
-        gap: 2rem;
+        flex-direction: row;      /* Ensures blog cards are in a row */
+        gap: 2rem;                /* Spacing between cards */
         margin-top: 2rem;
-        flex-wrap: wrap;
+        flex-wrap: wrap;          /* Allows wrapping on smaller screens */
+        justify-content: flex-start;
       }
       .blog-card {
         background: #fff;
@@ -83,9 +80,11 @@
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         border: 1px solid black;
-        flex: 1;
+        flex: 0 1 380px;        /* Controls width and responsiveness */
         min-width: 300px;
+        max-width: 380px;
         transition: transform 0.3s ease;
+        margin-bottom: 2rem;    /* Space when wrapping */
       }
       .blog-card:hover {
         transform: translateY(-5px);
@@ -120,11 +119,20 @@
         border-radius: 50%;
         margin-right: 10px;
       }
+      /* Responsive for Mobile */
+      @media (max-width: 900px) {
+        .blogs {
+          flex-direction: column;
+        }
+        .blog-card {
+          max-width: 100%;
+          min-width: unset;
+        }
+      }
     </style>
   </head>
   <body class="is-preload">
     <div id="wrapper">
-
       <!-- Intro -->
       <section class="intro">
         <header>
@@ -142,7 +150,6 @@
           </span>
         </div>
       </section>
-
       <!-- About -->
       <section id="about">
         <header>
@@ -159,7 +166,6 @@
           </p>
         </div>
       </section>
-
       <!-- Skills -->
       <section>
         <header>
@@ -176,7 +182,6 @@
           </ul>
         </div>
       </section>
-
       <!-- Experience -->
       <section>
         <header>
@@ -188,7 +193,6 @@
             <strong>SEO Webplanet Solution</strong> — 2025 (Current)<br>
             Building and designing WordPress websites, focusing on SEO optimization, responsive layouts, and client-focused solutions.
           </p>
-
           <h3>WordPress Developer Intern</h3>
           <p>
             <strong>Maskoid Technology</strong> — 2025<br>
@@ -196,7 +200,6 @@
           </p>
         </div>
       </section>
-
       <!-- Projects -->
       <section>
         <header>
@@ -218,7 +221,6 @@
               </a>
             </div>
           </div>
-
           <div class="project-card">
             <div class="project-image-wrapper">
               <img src="images/maskoid.png" alt="Maskoid Technology Project">
@@ -236,8 +238,7 @@
           </div>
         </div>
       </section>
-
-      <!-- Blog Section -->
+      <!-- Blog Section START: UPDATED ROW LAYOUT -->
       <section>
         <header>
           <h2>Blog</h2>
@@ -258,7 +259,6 @@
               <a href="https://www.bluehost.in/blog/why-wordpress-10-reasons-you-need-to-know/" class="project-link">Read More</a>
             </div>
           </div>
-
           <!-- Blog 2 -->
           <div class="blog-card">
             <img src="images/blog2.jpg" alt="Blog 2">
@@ -276,7 +276,7 @@
           </div>
         </div>
       </section>
-
+      <!-- Blog Section END -->
       <!-- Education -->
       <section>
         <header>
@@ -290,7 +290,6 @@
           </p>
         </div>
       </section>
-
       <!-- Contact -->
       <section>
         <header>
@@ -313,14 +312,11 @@
           </ul>
         </div>
       </section>
-
       <div class="copyright">
         &copy; Hetsi Tewar. Design adapted from 
         <a href="https://html5up.net">HTML5 UP</a>.
       </div>
-
     </div>
-
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
