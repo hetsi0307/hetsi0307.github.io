@@ -1,302 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>WordPress Projects by Hetsi | Portfolio Case Studies</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>WordPress Projects by Hetsi | Portfolio Case Studies</title>
 
-  <!-- Primary meta tags -->
-  <meta name="description" content="Explore WordPress projects by Hetsi — real client case studies, technical approach, tools used, and lessons learned. See examples and workflow for SEO-friendly WordPress websites." />
-  <meta name="author" content="Hetsi Tewar" />
-  <link rel="canonical" href="https://hetsi0307.github.io/blog-wordpress-projects.html" />
+<meta name="description" content="Explore WordPress projects by Hetsi — real client case studies, technical approach, tools used, and lessons learned." />
+<link rel="canonical" href="https://hetsi0307.github.io/blog-wordpress-projects.html" />
+<meta property="og:title" content="WordPress Projects by Hetsi | Portfolio Case Studies" />
+<meta property="og:description" content="Explore WordPress projects by Hetsi — real client case studies, technical approach, tools used, and lessons learned." />
+<meta property="og:image" content="https://hetsi0307.github.io/images/blog-wordpress-projects.jpg" />
+<meta property="og:url" content="https://hetsi0307.github.io/blog-wordpress-projects.html" />
+<meta property="og:type" content="article" />
+<link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="WordPress Projects by Hetsi | Portfolio Case Studies" />
-  <meta property="og:description" content="Explore WordPress projects by Hetsi — real client case studies, technical approach, tools used, and lessons learned." />
-  <meta property="og:image" content="https://hetsi0307.github.io/images/blog-wordpress-projects.jpg" />
-  <meta property="og:url" content="https://hetsi0307.github.io/blog-wordpress-projects.html" />
-  <meta property="og:type" content="article" />
+<style>
+/* ===== Dark theme tokens ===== */
+:root{
+  --ink-900:#050814; --ink-800:#0b1220; --ink-700:#0f172a;
+  --text-100:#e8ecff; --text-200:#c9d2ff; --muted:#9aa6c7;
+  --link:#93c5fd;
+  --c1:#22d3ee; --c2:#a78bfa; --c3:#a3e635; --c4:#f472b6; --c5:#60a5fa;
+  --card-radius:12px;
+}
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="WordPress Projects by Hetsi | Portfolio Case Studies" />
-  <meta name="twitter:description" content="Explore WordPress projects by Hetsi — case studies, tools, and SEO tips." />
-  <meta name="twitter:image" content="https://hetsi0307.github.io/images/blog-wordpress-projects.jpg" />
+html,body{height:100%;background:transparent}
+body{font-family:'Source Sans Pro',system-ui,Arial;line-height:1.65;color:var(--text-100)}
+a{color:var(--link)}
+.container{max-width:980px;margin:56px auto;padding:0 20px 100px; position:relative;z-index:1}
 
-  <!-- BlogPosting JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://hetsi0307.github.io/blog-wordpress-projects.html"
-    },
-    "headline": "WordPress Projects by Hetsi",
-    "description": "Explore WordPress projects by Hetsi — real client case studies, technical approach, tools used, and lessons learned for SEO-friendly WordPress websites.",
-    "image": "https://hetsi0307.github.io/images/blog-wordpress-projects.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Hetsi Tewar",
-      "url": "https://hetsi0307.github.io/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Hetsi Tewar",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://hetsi0307.github.io/images/author-placeholder.png"
-      }
-    },
-    "datePublished": "2025-08-30",
-    "dateModified": "2025-08-30"
-  }
-  </script>
+/* Content */
+.hero{display:flex;gap:24px;align-items:flex-start}
+.hero img{width:100%;max-height:360px;object-fit:cover;border-radius:10px;
+  box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06);will-change:transform}
+.hero .hero-content{flex:1}
+h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
+.meta{color:var(--muted);font-size:.95rem;margin-bottom:16px;display:flex;gap:12px;align-items:center}
 
-  <!-- Minimal styling to match your site -->
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <style>
-    /* ===== Existing page styles ===== */
-    body { font-family: 'Source Sans Pro', system-ui, Arial; line-height:1.6; color:#222; background:#fff; }
-    .container { max-width: 980px; margin: 48px auto; padding: 0 20px; }
-    .hero { display:flex; gap:24px; align-items:flex-start; }
-    .hero img { width: 100%; max-height: 360px; object-fit: cover; border-radius:10px; box-shadow:0 8px 30px rgba(0,0,0,0.08); }
-    .hero .hero-content { flex:1; }
-    h1 { letter-spacing:1px; font-size: clamp(24px, 3.4vw, 34px); margin: 0 0 12px; }
-    .meta { color:#666; font-size:0.95rem; margin-bottom: 20px; display:flex; gap:12px; align-items:center; }
-    .author-box { display:flex; gap:12px; align-items:center; margin:30px 0; }
-    .author-box img { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid #eee; }
-    .article-body { margin-top: 18px; font-size:1rem; color:#333; }
-    .article-body h2 { margin-top: 28px; }
-    .project-card { display:flex; gap:16px; align-items:flex-start; background:#fff; border-radius:10px; padding:16px; border:1px solid #eee; margin:14px 0; transition: transform .2s ease; }
-    .project-card img { width:180px; height:110px; object-fit:cover; border-radius:8px; }
-    .project-card .info h4 { margin:0 0 6px; font-size:1.05rem; }
-    .cta { display:inline-block; margin-top:12px; color:#0166cc; text-decoration:none; font-weight:600; }
-    .back-link { margin-top:28px; display:inline-block; color:#333; text-decoration: none; border:1px solid #ddd; padding:8px 12px; border-radius:8px; background:#fafafa; }
-    @media (max-width:720px){ .hero { flex-direction:column } .project-card { flex-direction:column } .project-card img{ width:100%; height:180px } }
+.author-box{display:flex;gap:12px;align-items:center;margin:28px 0;
+  background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);padding:12px 14px;border-radius:10px}
+.author-box img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.16)}
 
-    /* ===== New: Animated background + reveal animations ===== */
-    :root{
-      --glow-a:#86e3ff33;  /* cyan glow */
-      --glow-b:#48f2cf33;  /* mint glow */
-      --glow-c:#8ab4ff26;  /* soft blue */
-    }
-    /* Make body bg transparent so the fixed background element is visible */
-    html, body { background: transparent; }
+.article-body{margin-top:18px;font-size:1rem;color:var(--text-200)}
+.article-body h2{margin-top:30px;color:var(--text-100)}
 
-    /* Fixed animated background behind all content */
-    .bg-anim{
-      position: fixed; inset: -20%;
-      z-index: -1; pointer-events: none;
-      background:
-        radial-gradient(40% 40% at 20% 20%, var(--glow-a) 0%, transparent 60%),
-        radial-gradient(40% 40% at 80% 30%, var(--glow-b) 0%, transparent 60%),
-        radial-gradient(35% 35% at 50% 80%, var(--glow-c) 0%, transparent 70%),
-        linear-gradient(120deg, #f6f9ff 0%, #ffffff 60%, #f3f7ff 100%);
-      filter: blur(8px);
-      animation: bg-shift 18s ease-in-out infinite alternate;
-    }
-    .bg-anim::after{
-      content:"";
-      position:absolute; width:520px; height:520px; right:-140px; top:-80px;
-      background: radial-gradient(circle at 70% 40%, #86e3ff55, #86e3ff00 65%);
-      filter: blur(10px);
-      animation: floaty 26s ease-in-out infinite reverse;
-    }
-    @keyframes bg-shift{
-      0%   { transform: translate3d(-2%, -1%, 0) scale(1.02); }
-      50%  { transform: translate3d(1%, 1%, 0) scale(1.04); }
-      100% { transform: translate3d(3%, -2%, 0) scale(1.03); }
-    }
-    @keyframes floaty{
-      0%   { transform: translateY(0) translateX(0) rotate(0deg); }
-      50%  { transform: translateY(-18px) translateX(8px) rotate(3deg); }
-      100% { transform: translateY(0) translateX(0) rotate(0deg); }
-    }
-    /* Respect users who prefer reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      .bg-anim{ animation:none }
-      .bg-anim::after{ animation:none }
-    }
+.project-card{display:flex;gap:16px;align-items:flex-start;background:var(--ink-700);border-radius:var(--card-radius);
+  padding:16px;border:1px solid rgba(255,255,255,.08);margin:14px 0;transition:transform .2s ease,box-shadow .2s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);will-change:transform}
+.project-card img{width:180px;height:110px;object-fit:cover;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,.5)}
+.project-card .info h4{margin:0 0 6px;font-size:1.08rem}
+.cta{display:inline-block;margin-top:10px;color:#7dd3fc;text-decoration:none;font-weight:700}
+.cta:hover{text-decoration:underline}
+.back-link{margin-top:28px;display:inline-block;color:var(--text-100);text-decoration:none;border:1px solid rgba(255,255,255,.14);
+  padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.03)}
+@media(max-width:720px){.hero{flex-direction:column}.project-card{flex-direction:column}.project-card img{width:100%;height:180px}}
 
-    /* Scroll-reveal base states */
-    .reveal{
-      opacity: 0; transform: translateY(18px);
-      transition: transform .6s ease, opacity .6s ease, box-shadow .2s ease;
-      will-change: transform, opacity;
-    }
-    .reveal.show{
-      opacity: 1; transform: translateY(0);
-    }
+/* Footer */
+.site-footer{
+  margin-top:40px;
+  text-align:center;
+  font-size:.9rem;
+  color:var(--muted);
+  opacity:.7;
+}
 
-    /* Keep existing hover lift for cards */
-    .project-card:hover{ transform: translateY(-5px); }
+/* ===== Animated Background ===== */
+.bg-base{position:fixed; inset:0; z-index:-4; pointer-events:none;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, #0f1b37 0%, transparent 60%),
+    radial-gradient(1200px 800px at 120% 110%, #0b1631 0%, transparent 60%),
+    linear-gradient(180deg, var(--ink-900) 0%, #060a18 60%, var(--ink-900) 100%);
+}
+.bg-sweep{position:fixed; inset:-20%; z-index:-3; pointer-events:none;
+  background:conic-gradient(from 0deg,
+    rgba(34,211,238,.00) 0%,
+    rgba(34,211,238,.55) 12%,
+    rgba(167,139,250,.00) 25%,
+    rgba(163,230,53,.45) 37%,
+    rgba(96,165,250,.00) 50%,
+    rgba(244,114,182,.50) 62%,
+    rgba(34,211,238,.00) 75%,
+    rgba(96,165,250,.50) 87%,
+    rgba(34,211,238,.00) 100%);
+  filter: blur(20px);
+  animation: spinSweep 12s linear infinite;
+  opacity:.35;
+}
+@keyframes spinSweep { to { transform: rotate(360deg) } }
 
-    /* Optional: subtle image shine on hover */
-    .project-card img{
-      position: relative; display: block; overflow: hidden;
-    }
-    .project-card img::after{
-      content:""; position:absolute; inset:0; pointer-events:none;
-      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.18) 50%, transparent 100%);
-      transform: translateX(-120%); transition: transform .8s ease;
-    }
-    .project-card:hover img::after{ transform: translateX(120%); }
-  </style>
+.orb-layer{ position:fixed; inset:-10%; z-index:-2; pointer-events:none; }
+.orb{position:absolute; border-radius:50%; width:40vmax; height:40vmax; opacity:.6; filter: blur(60px);
+  animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate; mix-blend-mode: screen;}
+@keyframes pathA { 0%{ transform: translate(-15vw, 5vh) } 100%{ transform: translate(35vw, -8vh) } }
+@keyframes pathB { 0%{ transform: translate(10vw, 60vh) } 100%{ transform: translate(-20vw, 10vh) } }
+@keyframes pathC { 0%{ transform: translate(55vw, 20vh) } 100%{ transform: translate(5vw, 55vh) } }
+@keyframes pathD { 0%{ transform: translate(70vw, -5vh) } 100%{ transform: translate(15vw, 25vh) } }
+.orb.c1{ background: radial-gradient(circle at 30% 30%, #22d3ee, transparent 60%); animation-name: pathA; animation-duration: 8s; }
+.orb.c2{ background: radial-gradient(circle at 30% 30%, #a78bfa, transparent 60%); animation-name: pathB; animation-duration: 10s; }
+.orb.c3{ background: radial-gradient(circle at 30% 30%, #a3e635, transparent 60%); animation-name: pathC; animation-duration: 9s; }
+.orb.c4{ background: radial-gradient(circle at 30% 30%, #60a5fa, transparent 60%); animation-name: pathD; animation-duration: 12s; }
+
+/* Portfolio/blog themed decorative elements */
+.portfolio-decor{ position:fixed; inset:0; z-index:-1; pointer-events:none; }
+
+/* animated lines (limited) */
+.portfolio-decor .line{
+  position:absolute; width:34vw; height:120px; opacity:.28;
+  left:6vw; top:10vh;
+}
+.portfolio-decor .line.r{
+  width:28vw; height:100px; right:8vw; left:auto; bottom:12vh; top:auto;
+  opacity:.24;
+}
+.portfolio-decor .line path{
+  stroke:#9fd0ff; stroke-width:1.6; fill:none; stroke-linecap:round;
+  stroke-dasharray:10 12; stroke-dashoffset:0;
+  animation: dashFlow 5s linear infinite;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+}
+@keyframes dashFlow{ to{ stroke-dashoffset: -220; } }
+
+/* hexagon */
+.portfolio-decor .geo{
+  position:absolute; width:120px; height:120px; opacity:.25;
+  top:20vh; left:12vw;
+  animation: spinSlow 18s linear infinite;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
+}
+
+/* { } bracket chip */
+.portfolio-decor .ico.big-bracket{
+  position:absolute; font-size:42px; font-weight:800; letter-spacing:.5px;
+  color:#cfe6ff; opacity:.30; right:18vw; top:30vh;
+  background:rgba(147,197,253,.10); border:1px solid rgba(147,197,253,.25);
+  padding:8px 14px; border-radius:999px;
+  animation: floatY 6s ease-in-out infinite;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.45));
+}
+
+/* </> chip */
+.portfolio-decor .ico.code-tag{
+  position:absolute; font-size:26px; font-weight:800;
+  color:#9fd0ff; opacity:.35; left:45vw; bottom:20vh;
+  background:rgba(147,197,253,.10); border:1px solid rgba(147,197,253,.25);
+  padding:6px 10px; border-radius:999px;
+  animation: floatY 7s ease-in-out infinite reverse;
+}
+
+/* arrow */
+.portfolio-decor .arrow{
+  position:absolute; width:120px; height:40px; opacity:.30;
+  right:10vw; bottom:14vh; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  animation: pulseArrow 3s ease-in-out infinite;
+}
+
+/* icon font family */
+.portfolio-decor .ico{ font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+
+/* simple animations */
+@keyframes spinSlow{ to{ transform: rotate(360deg); } }
+@keyframes pulseArrow{ 0%,100%{ opacity:.15 } 50%{ opacity:.45 } }
+@keyframes floatY{ 0%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } 100%{ transform: translateY(0) } }
+</style>
 </head>
 <body>
 
-  <!-- New: animated background element -->
-  <div class="bg-anim" aria-hidden="true"></div>
+<!-- Background -->
+<div class="bg-base" aria-hidden="true"></div>
+<div class="bg-sweep" aria-hidden="true"></div>
+<div class="orb-layer" aria-hidden="true">
+  <div class="orb c1" style="left:-10vw; top:10vh"></div>
+  <div class="orb c2" style="right:-10vw; bottom:5vh"></div>
+  <div class="orb c3" style="left:30vw; top:0"></div>
+  <div class="orb c4" style="right:5vw; top:-5vh"></div>
+</div>
 
-  <div class="container">
+<!-- Decorative elements -->
+<div class="portfolio-decor" aria-hidden="true">
+  <svg class="line" viewBox="0 0 600 120" preserveAspectRatio="none">
+    <path d="M 0 80 C 120 10, 240 140, 360 60 S 520 40, 600 80" />
+  </svg>
+  <svg class="line r" viewBox="0 0 520 100" preserveAspectRatio="none">
+    <path d="M 0 60 C 100 0, 220 100, 320 40 S 440 30, 520 60" />
+  </svg>
 
-    <!-- breadcrumb / small nav -->
-    <p style="color:#777;font-size:0.95rem;margin-bottom:10px;">
-      <a href="https://hetsi0307.github.io/" style="color:#0166cc;text-decoration:none">Home</a> &raquo; Blog &raquo; WordPress Projects by Hetsi
-    </p>
+  <svg class="geo geo-a" viewBox="0 0 100 100">
+    <polygon points="50,5 95,27 95,73 50,95 5,73 5,27" stroke="#9fd0ff" stroke-width="2" fill="none" />
+  </svg>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div style="flex:1">
-        <img src="images/blog1.png" alt="WordPress projects by Hetsi" />
+  <div class="ico big-bracket">{ }</div>
+  <div class="ico code-tag">&lt;/&gt;</div>
+
+  <svg class="arrow" viewBox="0 0 120 40">
+    <path d="M 5 20 H 100 L 90 10 M 100 20 L 90 30"
+          stroke="#7dd3fc" stroke-width="2" fill="none"
+          stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</div>
+
+<div class="container">
+  <p class="crumb" style="font-size:.95rem;margin-bottom:12px;">
+    <a href="https://hetsi0307.github.io/">Home</a> &raquo; Blog &raquo; WordPress Projects by Hetsi
+  </p>
+
+  <section class="hero">
+    <div style="flex:1"><img src="images/blog1.png" alt="WordPress projects by Hetsi" /></div>
+    <div class="hero-content">
+      <h1>WordPress Projects by Hetsi — case studies, approach & lessons</h1>
+      <div class="meta">
+        <span>By <strong>Hetsi Tewar</strong></span><span aria-hidden="true">•</span>
+        <span>Aug 30, 2025</span><span aria-hidden="true">•</span>
+        <span>Reading time: ~6 min</span>
       </div>
-      <div class="hero-content">
-        <h1>WordPress Projects by Hetsi — case studies, approach & lessons</h1>
-        <div class="meta">
-          <span>By <strong>Hetsi Tewar</strong></span>
-          <span>•</span>
-          <span>Aug 30, 2025</span>
-          <span>•</span>
-          <span>Reading time: ~6 min</span>
-        </div>
+      <p style="color:var(--text-200);margin-top:6px">
+        I build SEO-friendly WordPress websites that balance visual design with performance…
+      </p>
+    </div>
+  </section>
 
-        <p style="color:#444; margin-top:6px;">
-          I build SEO-friendly WordPress websites that balance visual design with performance. Below I explain two example projects, the technical choices I made, and the key results — so you can see my real-world workflow.
-        </p>
-      </div>
-    </section>
+  <div class="author-box" aria-label="Author information">
+    <img src="images/myimage.jpg" alt="Author Hetsi Tewar">
+    <div><div style="font-weight:700">Hetsi Tewar</div>
+      <div style="color:var(--muted);font-size:.95rem">WordPress Developer & Website Designer — Vadodara</div>
+    </div>
+  </div>
 
-    <!-- author -->
-    <div class="author-box" aria-label="Author information">
-      <img src="images/myimage.jpg" alt="Author Hetsi Tewar">
-      <div>
-        <div style="font-weight:700">Hetsi Tewar</div>
-        <div style="color:#666; font-size:0.95rem">WordPress Developer & Website Designer — Vadodara</div>
+  <article class="article-body" id="main-article">
+    <h2>Why WordPress for client projects?</h2>
+    <p>WordPress is flexible, extendable, and well supported…</p>
+
+    <h2>My workflow (how I work on WordPress projects)</h2>
+    <ol>
+      <li><strong>Requirement gathering:</strong> …</li>
+      <li><strong>Design & prototypes:</strong> …</li>
+      <li><strong>Development:</strong> …</li>
+      <li><strong>SEO & performance:</strong> …</li>
+      <li><strong>Testing & handover:</strong> …</li>
+    </ol>
+
+    <h2>Project — Homeopathy Clinic Website (case study)</h2>
+    <div class="project-card">
+      <img src="images/chhc.png" alt="Homeopathy Clinic website by Hetsi" />
+      <div class="info">
+        <h4>Homeopathy Clinic Website</h4>
+        <p>A complete site for Dr. Mahavrat S Patel…</p>
+        <a class="cta" href="https://www.homeopathyhealing.net/" target="_blank" rel="noopener">View live (client site)</a>
       </div>
     </div>
 
-    <!-- ARTICLE -->
-    <article class="article-body" id="main-article">
-
-      <h2>Why WordPress for client projects?</h2>
-      <p>
-        WordPress is flexible, extendable, and well supported — that’s why I choose it for most client projects.
-        With the right combination of a lightweight theme, targeted plugins, and clean code, you can deliver
-        fast, SEO-optimized websites that are simple for clients to update.
-      </p>
-
-      <h2>My workflow (how I work on WordPress projects)</h2>
-      <ol>
-        <li><strong>Requirement gathering:</strong> Understand client goals and the primary user actions (contact, book, buy).</li>
-        <li><strong>Design & prototypes:</strong> Quick Figma mockups or Elementor wireframes for layout sign-off.</li>
-        <li><strong>Development:</strong> Lightweight starter theme, use child theme for custom styles, and optimize assets.</li>
-        <li><strong>SEO & performance:</strong> Proper heading usage, meta tags, image optimization, and caching.</li>
-        <li><strong>Testing & handover:</strong> Cross-browser test, mobile testing, and a simple instruction guide for the client.</li>
-      </ol>
-
-      <h2>Project — Homeopathy Clinic Website (case study)</h2>
-      <div class="project-card" role="group" aria-labelledby="project1-title">
-        <img src="images/chhc.png" alt="Homeopathy Clinic website by Hetsi" />
-        <div class="info">
-          <h4 id="project1-title">Homeopathy Clinic Website</h4>
-          <p style="margin:0 0 8px;color:#555;">
-            A complete site for Dr. Mahavrat S Patel, built to showcase services (homeopathy, aesthetic treatments, holistic healing) and allow appointment queries.
-          </p>
-          <ul style="margin:6px 0;color:#555;">
-            <li><strong>Role:</strong> Full website build (design, template structure, content placement)</li>
-            <li><strong>Tech:</strong> WordPress, custom theme/child theme, optimized images</li>
-            <li><strong>SEO focus:</strong> Local SEO (city-based keywords), schema for organization</li>
-          </ul>
-          <a class="cta" href="https://www.homeopathyhealing.net/" target="_blank" rel="noopener noreferrer">View live (client site)</a>
-        </div>
+    <h2>Project — Maskoid Technology (service pages)</h2>
+    <div class="project-card">
+      <img src="images/maskoidlogo.png" alt="Maskoid Technology service pages by Hetsi" />
+      <div class="info">
+        <h4>Maskoid Technology — service pages</h4>
+        <p>I implemented the service sections…</p>
+        <a class="cta" href="https://maskoid.com/" target="_blank" rel="noopener">View live (client site)</a>
       </div>
+    </div>
 
-      <h2>Project — Maskoid Technology (service pages)</h2>
-      <div class="project-card" role="group" aria-labelledby="project2-title">
-        <img src="images/maskoidlogo.png" alt="Maskoid Technology service pages by Hetsi" />
-        <div class="info">
-          <h4 id="project2-title">Maskoid Technology — service pages</h4>
-          <p style="margin:0 0 8px;color:#555;">
-            I implemented the service sections and helped optimize the theme for performance and SEO-friendly content structure.
-          </p>
-          <ul style="margin:6px 0;color:#555;">
-            <li><strong>Role:</strong> Service sections, responsive templates</li>
-            <li><strong>Tech:</strong> WordPress + Elementor (templates), clean CSS overrides</li>
-            <li><strong>SEO focus:</strong> Service page schema and concise service descriptions for better snippet display</li>
-          </ul>
-          <a class="cta" href="https://maskoid.com/" target="_blank" rel="noopener noreferrer">View live (client site)</a>
-        </div>
-      </div>
+    <h2>Key lessons & recommendations</h2>
+    <ul>
+      <li><strong>Speed matters:</strong> Optimize images…</li>
+      <li><strong>Use schema:</strong> Article, Organization…</li>
+      <li><strong>Content-first:</strong> Build templates around content…</li>
+      <li><strong>Backups & staging:</strong> Use staging site…</li>
+    </ul>
 
-      <h2>Key lessons & recommendations</h2>
-      <p>
-        After building multiple WordPress sites, these are the things I repeat on every project:
-      </p>
-      <ul>
-        <li><strong>Speed matters:</strong> Optimize images, use webp where possible, and limit heavy plugins.</li>
-        <li><strong>Use schema:</strong> Article, Organization, LocalBusiness schemas help Google better understand content.</li>
-        <li><strong>Content-first:</strong> Build templates around content: clear headings, short paragraphs, and internal linking.</li>
-        <li><strong>Backups & staging:</strong> Use staging site and schedule backups before every change.</li>
-      </ul>
+    <h2>Want a similar project?</h2>
+    <p>If you'd like a custom WordPress site, check my main portfolio:
+      <a href="https://hetsi0307.github.io/">Hetsi Tewar — Portfolio</a></p>
 
-      <h2>Want a similar project?</h2>
-      <p>
-        If you'd like a custom WordPress site (portfolio, business site or blog), check my main portfolio and contact me:
-        <a href="https://hetsi0307.github.io/">Hetsi Tewar — Portfolio</a>
-      </p>
+    <div style="margin-top:30px;padding:16px;border-radius:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.12);color:var(--text-200)">
+      <strong style="color:var(--text-100)">Get in Touch:</strong>
+      <a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a>
+    </div>
 
-      <div style="margin-top:30px; padding:16px; border-radius:8px; background:#fafafa; border:1px solid #eee;">
-        <strong>Get in Touch:</strong> Interested in working together? Email me at
-        <a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a> or message via LinkedIn.
-      </div>
+    <a class="back-link" href="https://hetsi0307.github.io/"><b>◀ Back to portfolio</b></a>
+  </article>
 
-      <a class="back-link" href="https://hetsi0307.github.io/"><b>◀ Back to portfolio</b></a>
+  <!-- Footer copyright -->
+  <footer class="site-footer">
+    &copy; 2025 Hetsi Tewar. All rights reserved.
+  </footer>
+</div>
 
-    </article>
-  </div>
-
-  <!-- New: tiny IntersectionObserver for scroll reveals -->
-  <script>
-    (function(){
-      // Pick elements to reveal
-      const toReveal = [
-        ...document.querySelectorAll('.project-card'),
-        document.querySelector('.hero img'),
-        document.querySelector('.hero .hero-content'),
-        document.querySelector('.author-box')
-      ].filter(Boolean);
-
-      // add base class
-      toReveal.forEach(el => el.classList.add('reveal'));
-
-      // if no support, show all
-      if(!('IntersectionObserver' in window)){
-        toReveal.forEach(el => el.classList.add('show'));
-        return;
-      }
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if(e.isIntersecting){
-            e.target.classList.add('show');
-            io.unobserve(e.target);
-          }
-        });
-      }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
-
-      toReveal.forEach(el => io.observe(el));
-    })();
-  </script>
+<script>
+(() => {
+  // simple reveal effects
+  const toReveal=[...document.querySelectorAll('.project-card'),
+                  document.querySelector('.hero img'),
+                  document.querySelector('.hero .hero-content'),
+                  document.querySelector('.author-box')].filter(Boolean);
+  toReveal.forEach(el=>el.classList.add('reveal'));
+  const headers=[...document.querySelectorAll('.article-body h2')];
+  headers.forEach(h=>h.classList.add('revealX'));
+  if('IntersectionObserver'in window){
+    const io=new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }});
+    },{threshold:.15});
+    [...toReveal,...headers].forEach(el=>io.observe(el));
+  }else{
+    [...toReveal,...headers].forEach(el=>el.classList.add('show'));
+  }
+})();
+</script>
 </body>
 </html>
