@@ -56,7 +56,7 @@
   <!-- Minimal styling to match your site -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
-    /* Blog page specific styles */
+    /* ===== Existing page styles ===== */
     body { font-family: 'Source Sans Pro', system-ui, Arial; line-height:1.6; color:#222; background:#fff; }
     .container { max-width: 980px; margin: 48px auto; padding: 0 20px; }
     .hero { display:flex; gap:24px; align-items:flex-start; }
@@ -68,15 +68,87 @@
     .author-box img { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid #eee; }
     .article-body { margin-top: 18px; font-size:1rem; color:#333; }
     .article-body h2 { margin-top: 28px; }
-    .project-card { display:flex; gap:16px; align-items:flex-start; background:#fff; border-radius:10px; padding:16px; border:1px solid #eee; margin:14px 0; }
+    .project-card { display:flex; gap:16px; align-items:flex-start; background:#fff; border-radius:10px; padding:16px; border:1px solid #eee; margin:14px 0; transition: transform .2s ease; }
     .project-card img { width:180px; height:110px; object-fit:cover; border-radius:8px; }
     .project-card .info h4 { margin:0 0 6px; font-size:1.05rem; }
     .cta { display:inline-block; margin-top:12px; color:#0166cc; text-decoration:none; font-weight:600; }
     .back-link { margin-top:28px; display:inline-block; color:#333; text-decoration: none; border:1px solid #ddd; padding:8px 12px; border-radius:8px; background:#fafafa; }
     @media (max-width:720px){ .hero { flex-direction:column } .project-card { flex-direction:column } .project-card img{ width:100%; height:180px } }
+
+    /* ===== New: Animated background + reveal animations ===== */
+    :root{
+      --glow-a:#86e3ff33;  /* cyan glow */
+      --glow-b:#48f2cf33;  /* mint glow */
+      --glow-c:#8ab4ff26;  /* soft blue */
+    }
+    /* Make body bg transparent so the fixed background element is visible */
+    html, body { background: transparent; }
+
+    /* Fixed animated background behind all content */
+    .bg-anim{
+      position: fixed; inset: -20%;
+      z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(40% 40% at 20% 20%, var(--glow-a) 0%, transparent 60%),
+        radial-gradient(40% 40% at 80% 30%, var(--glow-b) 0%, transparent 60%),
+        radial-gradient(35% 35% at 50% 80%, var(--glow-c) 0%, transparent 70%),
+        linear-gradient(120deg, #f6f9ff 0%, #ffffff 60%, #f3f7ff 100%);
+      filter: blur(8px);
+      animation: bg-shift 18s ease-in-out infinite alternate;
+    }
+    .bg-anim::after{
+      content:"";
+      position:absolute; width:520px; height:520px; right:-140px; top:-80px;
+      background: radial-gradient(circle at 70% 40%, #86e3ff55, #86e3ff00 65%);
+      filter: blur(10px);
+      animation: floaty 26s ease-in-out infinite reverse;
+    }
+    @keyframes bg-shift{
+      0%   { transform: translate3d(-2%, -1%, 0) scale(1.02); }
+      50%  { transform: translate3d(1%, 1%, 0) scale(1.04); }
+      100% { transform: translate3d(3%, -2%, 0) scale(1.03); }
+    }
+    @keyframes floaty{
+      0%   { transform: translateY(0) translateX(0) rotate(0deg); }
+      50%  { transform: translateY(-18px) translateX(8px) rotate(3deg); }
+      100% { transform: translateY(0) translateX(0) rotate(0deg); }
+    }
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .bg-anim{ animation:none }
+      .bg-anim::after{ animation:none }
+    }
+
+    /* Scroll-reveal base states */
+    .reveal{
+      opacity: 0; transform: translateY(18px);
+      transition: transform .6s ease, opacity .6s ease, box-shadow .2s ease;
+      will-change: transform, opacity;
+    }
+    .reveal.show{
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* Keep existing hover lift for cards */
+    .project-card:hover{ transform: translateY(-5px); }
+
+    /* Optional: subtle image shine on hover */
+    .project-card img{
+      position: relative; display: block; overflow: hidden;
+    }
+    .project-card img::after{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.18) 50%, transparent 100%);
+      transform: translateX(-120%); transition: transform .8s ease;
+    }
+    .project-card:hover img::after{ transform: translateX(120%); }
   </style>
 </head>
 <body>
+
+  <!-- New: animated background element -->
+  <div class="bg-anim" aria-hidden="true"></div>
+
   <div class="container">
 
     <!-- breadcrumb / small nav -->
@@ -107,7 +179,7 @@
 
     <!-- author -->
     <div class="author-box" aria-label="Author information">
-        <img src="images/myimage.jpg" alt="Author Hetsi Tewar">
+      <img src="images/myimage.jpg" alt="Author Hetsi Tewar">
       <div>
         <div style="font-weight:700">Hetsi Tewar</div>
         <div style="color:#666; font-size:0.95rem">WordPress Developer & Website Designer — Vadodara</div>
@@ -193,5 +265,38 @@
 
     </article>
   </div>
+
+  <!-- New: tiny IntersectionObserver for scroll reveals -->
+  <script>
+    (function(){
+      // Pick elements to reveal
+      const toReveal = [
+        ...document.querySelectorAll('.project-card'),
+        document.querySelector('.hero img'),
+        document.querySelector('.hero .hero-content'),
+        document.querySelector('.author-box')
+      ].filter(Boolean);
+
+      // add base class
+      toReveal.forEach(el => el.classList.add('reveal'));
+
+      // if no support, show all
+      if(!('IntersectionObserver' in window)){
+        toReveal.forEach(el => el.classList.add('show'));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            e.target.classList.add('show');
+            io.unobserve(e.target);
+          }
+        });
+      }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+
+      toReveal.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
