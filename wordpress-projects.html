@@ -15,11 +15,15 @@
 <link rel="stylesheet" href="assets/css/main.css" />
 
 <style>
-/* ===== Dark theme tokens ===== */
+/* ===== Medium Dark theme tokens ===== */
 :root{
-  --ink-900:#050814; --ink-800:#0b1220; --ink-700:#0f172a;
-  --text-100:#e8ecff; --text-200:#c9d2ff; --muted:#9aa6c7;
-  --link:#93c5fd;
+  --ink-900:#0f172a; /* Slightly darker than light, but not fully dark */
+  --ink-800:#1e293b;
+  --ink-700:#334155;
+  --text-100:#e2e8f0; /* Light text for contrast */
+  --text-200:#cbd5e1;
+  --muted:#94a3b8;
+  --link:#67e8f9; /* Bright link color */
   --c1:#22d3ee; --c2:#a78bfa; --c3:#a3e635; --c4:#f472b6; --c5:#60a5fa;
   --card-radius:12px;
 }
@@ -48,9 +52,13 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
 .project-card{display:flex;gap:16px;align-items:flex-start;background:var(--ink-700);border-radius:var(--card-radius);
   padding:16px;border:1px solid rgba(255,255,255,.08);margin:14px 0;transition:transform .2s ease,box-shadow .2s ease;
   box-shadow:0 10px 30px rgba(0,0,0,.45);will-change:transform}
+.project-card:hover {
+  transform: translateY(-5px) scale(1.01); /* Lift and slightly enlarge */
+  box-shadow: 0 15px 40px rgba(0,0,0,.6); /* More prominent shadow on hover */
+}
 .project-card img{width:180px;height:110px;object-fit:cover;border-radius:8px;box-shadow:0 10px 24px rgba(0,0,0,.5)}
 .project-card .info h4{margin:0 0 6px;font-size:1.08rem}
-.cta{display:inline-block;margin-top:10px;color:#7dd3fc;text-decoration:none;font-weight:700}
+.cta{display:inline-block;margin-top:10px;color:var(--link);text-decoration:none;font-weight:700}
 .cta:hover{text-decoration:underline}
 .back-link{margin-top:28px;display:inline-block;color:var(--text-100);text-decoration:none;border:1px solid rgba(255,255,255,.14);
   padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.03)}
@@ -68,9 +76,9 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
 /* ===== Animated Background ===== */
 .bg-base{position:fixed; inset:0; z-index:-4; pointer-events:none;
   background:
-    radial-gradient(1200px 800px at 20% -10%, #0f1b37 0%, transparent 60%),
-    radial-gradient(1200px 800px at 120% 110%, #0b1631 0%, transparent 60%),
-    linear-gradient(180deg, var(--ink-900) 0%, #060a18 60%, var(--ink-900) 100%);
+    radial-gradient(1200px 800px at 20% -10%, #1e2e49 0%, transparent 60%), /* Adjusted color */
+    radial-gradient(1200px 800px at 120% 110%, #17273d 0%, transparent 60%), /* Adjusted color */
+    linear-gradient(180deg, var(--ink-900) 0%, #141c2c 60%, var(--ink-900) 100%); /* Adjusted color */
 }
 .bg-sweep{position:fixed; inset:-20%; z-index:-3; pointer-events:none;
   background:conic-gradient(from 0deg,
@@ -163,15 +171,28 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
 @keyframes pulseArrow{ 0%,100%{ opacity:.15 } 50%{ opacity:.45 } }
 @keyframes floatY{ 0%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } 100%{ transform: translateY(0) } }
 
-  h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
-  }
-  
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-100);
+}
+
+/* Reveal animations for scrolling effect */
+.reveal, .revealX {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.revealX {
+  transform: translateX(-20px);
+}
+.reveal.show, .revealX.show {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
 </style>
 </head>
 <body>
 
-<!-- Background -->
 <div class="bg-base" aria-hidden="true"></div>
 <div class="bg-sweep" aria-hidden="true"></div>
 <div class="orb-layer" aria-hidden="true">
@@ -181,7 +202,6 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
   <div class="orb c4" style="right:5vw; top:-5vh"></div>
 </div>
 
-<!-- Decorative elements -->
 <div class="portfolio-decor" aria-hidden="true">
   <svg class="line" viewBox="0 0 600 120" preserveAspectRatio="none">
     <path d="M 0 80 C 120 10, 240 140, 360 60 S 520 40, 600 80" />
@@ -284,7 +304,6 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
     <a class="back-link" href="https://hetsi0307.github.io/"><b>◀ Back to portfolio</b></a>
   </article>
 
-  <!-- Footer copyright -->
   <footer class="site-footer">
     &copy; 2025 Hetsi Tewar. All rights reserved.
   </footer>
@@ -306,6 +325,7 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
     },{threshold:.15});
     [...toReveal,...headers].forEach(el=>io.observe(el));
   }else{
+    // Fallback for browsers that don't support IntersectionObserver
     [...toReveal,...headers].forEach(el=>el.classList.add('show'));
   }
 })();
