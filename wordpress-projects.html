@@ -15,15 +15,15 @@
 <link rel="stylesheet" href="assets/css/main.css" />
 
 <style>
-/* ===== Medium Dark theme tokens ===== */
+/* ===== Dark theme tokens (Restored) ===== */
 :root{
-  --ink-900:#0f172a; /* Slightly darker than light, but not fully dark */
-  --ink-800:#1e293b;
-  --ink-700:#334155;
-  --text-100:#e2e8f0; /* Light text for contrast */
-  --text-200:#cbd5e1;
-  --muted:#94a3b8;
-  --link:#67e8f9; /* Bright link color */
+  --ink-900:#050814;
+  --ink-800:#0b1220;
+  --ink-700:#0f172a;
+  --text-100:#e8ecff;
+  --text-200:#c9d2ff;
+  --muted:#9aa6c7;
+  --link:#93c5fd;
   --c1:#22d3ee; --c2:#a78bfa; --c3:#a3e635; --c4:#f472b6; --c5:#60a5fa;
   --card-radius:12px;
 }
@@ -31,7 +31,8 @@
 html,body{height:100%;background:transparent}
 body{font-family:'Source Sans Pro',system-ui,Arial;line-height:1.65;color:var(--text-100)}
 a{color:var(--link)}
-.container{max-width:980px;margin:56px auto;padding:0 20px 100px; position:relative;z-index:1}
+/* Updated container padding to reduce bottom space */
+.container{max-width:980px;margin:56px auto;padding:0 20px 40px; position:relative;z-index:1}
 
 /* Content */
 .hero{display:flex;gap:24px;align-items:flex-start}
@@ -60,13 +61,29 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
 .project-card .info h4{margin:0 0 6px;font-size:1.08rem}
 .cta{display:inline-block;margin-top:10px;color:var(--link);text-decoration:none;font-weight:700}
 .cta:hover{text-decoration:underline}
-.back-link{margin-top:28px;display:inline-block;color:var(--text-100);text-decoration:none;border:1px solid rgba(255,255,255,.14);
-  padding:8px 12px;border-radius:8px;background:rgba(255,255,255,.03)}
+
+.back-link{
+    margin-top:28px;
+    display:inline-block;
+    color:var(--text-100);
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,.14);
+    padding:8px 12px;
+    border-radius:8px;
+    background:rgba(255,255,255,.03);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.back-link:hover {
+    background-color: rgba(255,255,255,.1);
+    border-color: rgba(255,255,255,.2);
+    color: var(--link);
+}
+
 @media(max-width:720px){.hero{flex-direction:column}.project-card{flex-direction:column}.project-card img{width:100%;height:180px}}
 
 /* Footer */
 .site-footer{
-  margin-top:40px;
+  margin-top:30px; /* Reduced margin */
   text-align:center;
   font-size:.9rem;
   color:var(--muted);
@@ -76,9 +93,9 @@ h1{letter-spacing:.5px;font-size:clamp(24px,3.4vw,34px);margin:0 0 12px}
 /* ===== Animated Background ===== */
 .bg-base{position:fixed; inset:0; z-index:-4; pointer-events:none;
   background:
-    radial-gradient(1200px 800px at 20% -10%, #1e2e49 0%, transparent 60%), /* Adjusted color */
-    radial-gradient(1200px 800px at 120% 110%, #17273d 0%, transparent 60%), /* Adjusted color */
-    linear-gradient(180deg, var(--ink-900) 0%, #141c2c 60%, var(--ink-900) 100%); /* Adjusted color */
+    radial-gradient(1200px 800px at 20% -10%, #0f1b37 0%, transparent 60%),
+    radial-gradient(1200px 800px at 120% 110%, #0b1631 0%, transparent 60%),
+    linear-gradient(180deg, var(--ink-900) 0%, #060a18 60%, var(--ink-900) 100%);
 }
 .bg-sweep{position:fixed; inset:-20%; z-index:-3; pointer-events:none;
   background:conic-gradient(from 0deg,
