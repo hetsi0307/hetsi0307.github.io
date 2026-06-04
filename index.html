@@ -1,419 +1,1144 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>Hetsi Tewar Portfolio | WordPress Developer in Vadodara</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hetsi Tewar – QA Engineer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white:     #FFFFFF;
+    --offwhite:  #F2F6FC;
+    --navy:      #0A1F3D;
+    --navy2:     #122B52;
+    --blue:      #1848A0;
+    --accent:    #2563B0;
+    --silver:    #4A6A8A;
+    --muted:     #384E65;
+    --text:      #0D1B2E;
+    --textmid:   #1E3448;
+    --textsub:   #2C4560;
+    --border:    rgba(24,72,160,0.14);
+    --borderhov: rgba(24,72,160,0.4);
+    --shadow:    0 2px 24px rgba(10,31,61,0.09);
+    --shadow2:   0 10px 44px rgba(10,31,61,0.16);
+  }
 
-    <!-- Canonical + robots -->
-    <link rel="canonical" href="https://hetsi0307.github.io/">
-    <meta name="robots" content="index,follow">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-    <!-- SEO Meta -->
-    <meta name="title" content="Hetsi Tewar Portfolio | WordPress Developer in Vadodara">
-    <meta name="description" content="Portfolio of Hetsi Tewar, a skilled WordPress developer from Vadodara. Explore projects, blogs, skills, and experience in web design, SEO, and responsive development.">
-    <meta name="keywords" content="WordPress developer Vadodara, web developer portfolio, SEO web developer, responsive websites, Hetsi Tewar, freelance WordPress India">
-    <meta name="author" content="Hetsi Tewar">
+  body {
+    background-color: var(--white);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
 
-    <!-- Open Graph (Social Sharing) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hetsi0307.github.io/" />
-    <meta property="og:title" content="Hetsi Tewar Portfolio | WordPress Developer in Vadodara" />
-    <meta property="og:description" content="Explore the portfolio of Hetsi Tewar, showcasing WordPress development projects, skills, and blogs. Passionate about web design and SEO." />
-    <meta property="og:image" content="https://hetsi0307.github.io/images/myimage.jpg" />
+  /* ── CURSOR GLOW ── */
+  .cursor-glow {
+    position: fixed;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(24,72,160,0.07) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: left 0.12s ease, top 0.12s ease;
+  }
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hetsi Tewar Portfolio | WordPress Developer in Vadodara" />
-    <meta name="twitter:description" content="Portfolio of Hetsi Tewar, WordPress Developer from Vadodara. Discover projects, blogs, and SEO-friendly websites." />
-    <meta name="twitter:image" content="https://hetsi0307.github.io/images/myimage.jpg" />
+  /* ── PAGE LOADER ── */
+  #loader {
+    position: fixed; inset: 0;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
 
-    <!-- JSON-LD: Person + Website + Page + Lists -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://hetsi0307.github.io/#person",
-          "name": "Hetsi Tewar",
-          "jobTitle": "WordPress Developer",
-          "url": "https://hetsi0307.github.io/",
-          "image": "https://hetsi0307.github.io/images/myimage.jpg",
-          "sameAs": [
-            "https://github.com/hetsi0307",
-            "https://linkedin.com/in/hetsi-tewar-139239231"
-          ],
-          "worksFor": { "@type": "Organization", "name": "SEO Webplanet Solution" },
-          "alumniOf": { "@type": "CollegeOrUniversity", "name": "SVIT, Vasad" }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://hetsi0307.github.io/#website",
-          "name": "Hetsi Tewar Portfolio",
-          "url": "https://hetsi0307.github.io/",
-          "publisher": { "@id": "https://hetsi0307.github.io/#person" }
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://hetsi0307.github.io/#webpage",
-          "url": "https://hetsi0307.github.io/",
-          "name": "Hetsi Tewar Portfolio | WordPress Developer in Vadodara",
-          "description": "Portfolio of Hetsi Tewar including projects, blogs, skills, and contact information.",
-          "isPartOf": { "@id": "https://hetsi0307.github.io/#website" },
-          "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://hetsi0307.github.io/images/myimage.jpg"
-          },
-          "about": { "@id": "https://hetsi0307.github.io/#person" }
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://hetsi0307.github.io/#projects",
-          "name": "Projects",
-          "itemListElement": [
-            {
-              "@type": "CreativeWork",
-              "position": 1,
-              "name": "Homeopathy Clinic Website",
-              "url": "https://www.homeopathyhealing.net/",
-              "image": "https://hetsi0307.github.io/images/homeopathy.png",
-              "author": { "@id": "https://hetsi0307.github.io/#person" }
-            },
-            {
-              "@type": "CreativeWork",
-              "position": 2,
-              "name": "Maskoid Technology",
-              "url": "https://maskoid.com/",
-              "image": "https://hetsi0307.github.io/images/maskoid.png",
-              "author": { "@id": "https://hetsi0307.github.io/#person" }
-            }
-          ]
-        },
-        {
-          "@type": "ItemList",
-          "@id": "https://hetsi0307.github.io/#blog",
-          "name": "Blog",
-          "itemListElement": [
-            {
-              "@type": "BlogPosting",
-              "position": 1,
-              "headline": "Why WordPress is the Best Choice for Websites",
-              "url": "https://www.bluehost.in/blog/why-wordpress-10-reasons-you-need-to-know/",
-              "image": "https://hetsi0307.github.io/images/blog1.png",
-              "author": { "@id": "https://hetsi0307.github.io/#person" },
-              "isPartOf": { "@id": "https://hetsi0307.github.io/#webpage" }
-            },
-            {
-              "@type": "BlogPosting",
-              "position": 2,
-              "headline": "Top 5 SEO Practices for WordPress Websites",
-              "url": "https://zapier.com/blog/best-wordpress-seo-plugins/",
-              "image": "https://hetsi0307.github.io/images/seo-blog.jpg",
-              "author": { "@id": "https://hetsi0307.github.io/#person" },
-              "isPartOf": { "@id": "https://hetsi0307.github.io/#webpage" }
-            }
-          ]
-        }
-      ]
-    }
-    </script>
+  #loader.hidden { opacity: 0; visibility: hidden; }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <style>
-      /* ---- Layout wrapper (fixed from 40% 80% = 120%) ---- */
-      #wrapper { grid-template-columns: 35% 65%; }
+  .loader-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.2em;
+    overflow: hidden;
+  }
 
-      /* ---- Project Card Styles ---- */
-      .projects {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-      .project-card {
-        background: #fff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        border: 1px solid black;
-      }
-      .project-card:hover { transform: translateY(-5px); }
-      .project-image-wrapper { position: relative; width: 100%; padding-top: 0; overflow: hidden; }
-      .project-image-wrapper img { width: 100%; height: auto; display: block; object-fit: cover; }
-      .project-link { display: inline-block; margin-top: 8px; color: #007bff; text-decoration: none; font-weight: bold; }
-      .project-link:hover { text-decoration: underline; color: #0056b3; }
-      .project-card .card-content { padding: 1rem; }
-      .project-card h3 { margin: 0 0 0.5rem; font-size: 1.2rem; color: #333; }
-      .project-card p { margin: 0; font-size: 0.95rem; color: #555; }
+  .loader-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: loaderChar 0.5s ease forwards;
+  }
 
-      /* ---- Blog Section (ROW layout via CSS Grid) ---- */
-      .content.blogs{
-        display: grid !important;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-        align-items: stretch;
-      }
-      .content.blogs .blog-card{
-        background: #fff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        border: 1px solid black;
-        width: auto !important;
-        margin: 0 !important;
-        transition: transform 0.3s ease;
-      }
-      .content.blogs .blog-card:hover{ transform: translateY(-5px); }
-      .content.blogs .blog-card img{
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        display: block;
-      }
-      .content.blogs .card-content{ padding: 1rem; }
-      .content.blogs h3{ margin: 0 0 0.5rem; font-size: 1.3rem; color: #333; }
-      .content.blogs p{ font-size: 0.95rem; color: #555; }
-      .content.blogs .author{
-        display: flex; align-items: center; margin-top: 1rem;
-        font-size: 0.9rem; color: #666;
-      }
-      .content.blogs .author img{
-        width: 35px; height: 35px; border-radius: 50%; margin-right: 10px;
-      }
+  @keyframes loaderChar {
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-      /* ---- Responsive ---- */
-      @media (max-width: 900px){
-        #wrapper { grid-template-columns: 1fr; } /* stack main layout on small screens */
-      }
-    </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C5K86TRY77"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  .loader-line {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), #5B9BD5);
+    animation: loaderBar 1.4s ease forwards;
+  }
 
-  gtag('config', 'G-C5K86TRY77');
-</script>
-  </head>
-  <body class="is-preload">
-    <div id="wrapper">
-      <!-- Intro -->
-      <section class="intro">
-        <header>
-          <h1>Hetsi Tewar Portfolio</h1>
-          <p>WordPress Developer | Web Designer | Tech Enthusiast</p>
-          <ul class="actions">
-            <li><a href="#about" class="arrow scrolly"><span class="label">Next</span></a></li>
-          </ul>
-        </header>
-        <div class="content">
-          <span class="image fill" data-position="center">
-            <img src="images/profile.jpg" alt="Hetsi Tewar">
-          </span>
-        </div>
-      </section>
+  @keyframes loaderBar { from { width: 0; } to { width: 100%; } }
 
-      <!-- About -->
-      <section id="about">
-        <header><h2>About Me</h2></header>
-        <div class="content">
-          <p>
-            I’m currently a WordPress Developer at <strong>SEO Webplanet Solution</strong>, 
-            with a Bachelor's degree in <strong>Computer Engineering</strong> from 
-            <strong>SVIT</strong> (CGPA: 7.18). 
-            I enjoy turning ideas into elegant and functional digital solutions. 
-            With a strong foundation in web development, I strive to craft engaging user experiences 
-            and scalable WordPress sites.
-          </p>
-        </div>
-      </section>
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 20px rgba(10,31,61,0.08);
+    transform: translateY(-100%);
+    animation: navSlide 0.6s 1.5s ease forwards;
+  }
 
-      <!-- Skills -->
-      <section>
-        <header><h2>Skills</h2></header>
-        <div class="content">
-          <ul class="feature-icons">
-            <li class="icon solid fa-code">HTML5, CSS3, JavaScript</li>
-            <li class="icon solid fa-code">PHP, MySQL</li>
-            <li class="icon brands fa-wordpress">WordPress (Themes, Plugins)</li>
-            <li class="icon solid fa-terminal">Java, Python</li>
-            <li class="icon solid fa-mobile-alt">Responsive Design</li>
-            <li class="icon brands fa-github">Git & GitHub</li>
-          </ul>
-        </div>
-      </section>
+  @keyframes navSlide { to { transform: translateY(0); } }
 
-      <!-- Experience -->
-      <section>
-        <header><h2>Experience</h2></header>
-        <div class="content">
-          <h3>WordPress Developer</h3>
-          <p>
-            <strong>SEO Webplanet Solution</strong> — 2025 (Current)<br>
-            Building and designing WordPress websites, focusing on SEO optimization, responsive layouts, and client-focused solutions.
-          </p>
-          <h3>WordPress Developer Intern</h3>
-          <p>
-            <strong>Maskoid Technology</strong> — 2025<br>
-            Worked on custom WordPress websites, optimized themes, and created service section pages using Elementor and core web technologies.
-          </p>
-        </div>
-      </section>
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 600;
+    letter-spacing: 0.1em; color: var(--navy);
+    text-decoration: none;
+    position: relative;
+  }
 
-      <!-- Projects -->
-      <section>
-        <header><h2>Projects</h2></header>
-        <div class="content projects">
-          <div class="project-card">
-            <div class="project-image-wrapper">
-              <img src="images/homeopathy.png" alt="Homeopathy Clinic Website">
-            </div>
-            <div class="card-content">
-              <h3>Homeopathy Clinic Website</h3>
-              <p>
-                Complete website developed for Dr. Mahavrat S Patel, senior doctor in Vadodara.  
-                Includes homeopathy, aesthetic treatments (radiofrequency, skin peels, diode laser), and holistic healing (Ayurveda, Reiki, Yoga, Naturopathy).
-              </p>
-              <a href="https://www.homeopathyhealing.net/" target="_blank" class="project-link"><b> View Full Project </b></a>
-            </div>
-          </div>
+  .nav-logo::after {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 2px;
+    background: var(--blue);
+    transition: width 0.3s ease;
+  }
 
-          <div class="project-card">
-            <div class="project-image-wrapper">
-              <img src="images/maskoid.png" alt="Maskoid Technology Project">
-            </div>
-            <div class="card-content">
-              <h3>Maskoid Technology</h3>
-              <p>
-                Contributed to company website during internship.  
-                Focused on service section pages for an SEO-friendly WordPress site builder company located in Vadodara.
-              </p>
-              <a href="https://maskoid.com/" target="_blank" class="project-link"><b> View Full Project</b></a>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-image-wrapper">
-              <img src="images/aicrossword.png" alt="3D AI Word Search">
-            </div>
-            <div class="card-content">
-              <h3>AI Word Search</h3>
-              <p>
-                Try out my <strong>AI Word Search Game</strong> and see what I’ve built!
-              </p>
-              <a href="https://ai-word-search-game.netlify.app/" target="_blank" class="project-link"><b>Play Now</b></a>
-            </div>
-          </div> 
-        </div>
-      </section>
+  .nav-logo:hover::after { width: 100%; }
 
-      <!-- Blog (ROW layout) -->
-      <section>
-        <header><h2>Blogs</h2></header>
-        <div class="content blogs">
-          <!-- Blog 1 -->
-          <div class="blog-card">
-            <img src="images/blog1.png"
-                 alt="Laptop screen showing the WordPress logo on a clean workspace">
-            <div class="card-content">
-              <h3>Why WordPress is the Best Choice for Websites</h3>
-              <p>
-                Discover why WordPress powers over 40% of the web and how it can help your business grow with flexibility and SEO benefits.
-              </p>
-              <div class="author">
-                <img src="images/myimage.jpg" alt="Hetsi Tewar">
-                <span>By <strong>Hetsi Tewar</strong></span>
-              </div>
-              <a href="https://www.bluehost.in/blog/why-wordpress-10-reasons-you-need-to-know/" class="project-link" target="_blank" rel="noopener">Read More</a>
-            </div>
-          </div>
-          <!-- Blog 2 -->
-          <div class="blog-card">
-            <img src="images/seo-blog.jpg" alt="Blog 2 cover image about WordPress SEO practices">
-            <div class="card-content">
-              <h3>Top 5 SEO Practices for WordPress Websites</h3>
-              <p>
-                Learn the latest SEO strategies to rank your WordPress site higher on Google and drive more organic traffic effectively.
-              </p>
-              <div class="author">
-                <img src="images/myimage.jpg" alt="Hetsi Tewar">
-                <span>By <strong>Hetsi Tewar</strong></span>
-              </div>
-              <a href="https://zapier.com/blog/best-wordpress-seo-plugins/" class="project-link" target="_blank" rel="noopener">Read More</a>
-            </div>
-          </div>
-        </div>
-      </section>
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
-     <!-- Explore More Blogs (aligned like other sections) -->
-<section id="cta">
-  <header>
-    <h2>✨ Explore More Blogs ✨</h2>
-    <p>Discover more insights and my latest projects!</p>
-  </header>
+  .nav-links a {
+    font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--textmid);
+    text-decoration: none; font-weight: 500;
+    position: relative; padding-bottom: 3px;
+    transition: color 0.25s;
+  }
 
-  <div class="content">
-    <h3>WordPress Projects by Hetsi</h3>
-    <p>A showcase of my WordPress projects, case studies, and learnings.</p>
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 1.5px;
+    background: var(--blue);
+    transition: width 0.3s ease;
+  }
 
-    <ul class="actions">
-      <li>
-        <a href="https://hetsi0307.github.io/wordpress-projects.html" class="button primary">
-          Read Blog
-        </a>
-      </li>
-    </ul>
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .btn-resume {
+    padding: 0.45rem 1.1rem;
+    background: var(--navy); color: #fff;
+    text-decoration: none; font-size: 0.68rem;
+    font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; border: 1.5px solid var(--navy);
+    border-radius: 2px;
+    transition: all 0.25s; display: flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-resume:hover { background: var(--blue); border-color: var(--blue); }
+  .btn-resume .dl-icon { font-size: 0.85rem; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; padding: 8rem 4rem 4rem;
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #FFFFFF 55%, #EBF1FA 100%);
+  }
+
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(24,72,160,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(24,72,160,0.055) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+    animation: gridFade 1.5s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes gridFade { to { opacity: 1; } }
+
+  .hero-bg-circle {
+    position: absolute;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(24,72,160,0.07) 0%, transparent 70%);
+    right: -80px; top: 50%; transform: translateY(-50%);
+    pointer-events: none;
+    animation: circleFloat 6s ease-in-out infinite alternate;
+  }
+
+  @keyframes circleFloat {
+    from { transform: translateY(-50%) scale(1); }
+    to   { transform: translateY(-48%) scale(1.05); }
+  }
+
+  .hero-left { position: relative; z-index: 1; }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--blue);
+    border: 1px solid rgba(24,72,160,0.3);
+    background: rgba(24,72,160,0.05);
+    padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp 0.8s 1.6s forwards;
+  }
+
+  .hero-tag::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: #22C55E; animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1; transform:scale(1)} 50%{opacity:0.4; transform:scale(0.8)} }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.8rem, 7vw, 6.8rem);
+    font-weight: 300; line-height: 0.92;
+    letter-spacing: -0.02em; color: var(--navy);
+    margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp 0.9s 1.8s forwards;
+  }
+
+  .hero-name span {
+    display: block; font-style: italic; color: var(--blue);
+    position: relative;
+  }
+
+  /* Typewriter underline on italic name */
+  .hero-name span::after {
+    content: '';
+    position: absolute; bottom: 4px; left: 0;
+    width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue), #5B9BD5);
+    animation: underlineGrow 0.8s 2.8s ease forwards;
+  }
+
+  @keyframes underlineGrow { to { width: 100%; } }
+
+  .hero-role {
+    font-size: 0.78rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--silver);
+    margin-bottom: 2rem; font-weight: 500;
+    opacity: 0; animation: fadeUp 0.8s 2s forwards;
+  }
+
+  .hero-intro {
+    font-size: 1rem; line-height: 1.88; color: var(--textsub);
+    max-width: 480px; margin-bottom: 3rem; font-weight: 400;
+    opacity: 0; animation: fadeUp 0.8s 2.2s forwards;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s 2.4s forwards;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2.2rem;
+    background: var(--navy); color: #fff;
+    text-decoration: none; font-size: 0.72rem;
+    font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 2px solid var(--navy);
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: ''; position: absolute;
+    inset: 0; background: var(--blue);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    z-index: 0;
+  }
+
+  .btn-primary:hover::before { transform: translateX(0); }
+  .btn-primary span { position: relative; z-index: 1; }
+
+  .btn-outline {
+    padding: 0.9rem 2.2rem; background: transparent;
+    color: var(--navy); text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 2px solid rgba(10,31,61,0.35);
+    transition: all 0.3s; font-weight: 500;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--navy);
+    background: rgba(10,31,61,0.05);
+    color: var(--navy);
+  }
+
+  /* ── HERO CARD ── */
+  .hero-right {
+    display: flex; justify-content: center; align-items: center;
+    position: relative; z-index: 1;
+    opacity: 0; animation: fadeInScale 1s 2s forwards;
+  }
+
+  @keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.94) translateY(20px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .hero-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow2);
+    padding: 2.5rem; width: 300px;
+    position: relative;
+  }
+
+  .hero-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--navy), var(--accent));
+  }
+
+  .card-stat {
+    display: flex; align-items: baseline;
+    gap: 0.5rem; margin-bottom: 1.5rem;
+  }
+
+  .card-stat:last-child { margin-bottom: 0; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 400;
+    color: var(--navy); line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.72rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); font-weight: 500;
+  }
+
+  .card-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 4rem; }
+
+  .section-header {
+    display: flex; align-items: center;
+    gap: 1.5rem; margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem; color: var(--blue);
+    letter-spacing: 0.2em; font-weight: 400;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 400; color: var(--navy);
+    letter-spacing: -0.01em;
+  }
+
+  .section-line { flex: 1; height: 1px; background: var(--border); }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--offwhite); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+
+  .skill-category {
+    background: #fff; border: 1px solid var(--border);
+    padding: 2rem; position: relative;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
+  }
+
+  .skill-category:hover {
+    box-shadow: var(--shadow2);
+    border-color: var(--borderhov);
+    transform: translateY(-5px);
+  }
+
+  .skill-category::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; width: 0; height: 3px;
+    background: linear-gradient(90deg, var(--navy), var(--accent));
+    transition: width 0.4s ease;
+  }
+  .skill-category:hover::after { width: 100%; }
+
+  .skill-cat-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400;
+    color: var(--navy); margin-bottom: 1.25rem; font-style: italic;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+  .skill-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.08em;
+    padding: 0.3rem 0.68rem;
+    border: 1px solid rgba(24,72,160,0.22);
+    color: var(--textmid); text-transform: uppercase;
+    background: var(--offwhite);
+    transition: all 0.22s; cursor: default;
+  }
+
+  .skill-tag:hover {
+    border-color: var(--blue); color: var(--blue);
+    background: rgba(24,72,160,0.06);
+    transform: translateY(-1px);
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: #fff; }
+
+  .timeline { position: relative; padding-left: 3rem; }
+
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(to bottom, var(--navy), rgba(24,72,160,0.08));
+  }
+
+  .timeline-item {
+    position: relative; margin-bottom: 3.5rem;
+    opacity: 0; transform: translateX(-24px);
+    transition: all 0.65s cubic-bezier(0.22,1,0.36,1);
+  }
+  .timeline-item.visible { opacity: 1; transform: translateX(0); }
+
+  .timeline-dot {
+    position: absolute; left: -3rem; top: 0.45rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--navy); border: 2.5px solid #fff;
+    box-shadow: 0 0 0 3px rgba(10,31,61,0.18);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .timeline-item:hover .timeline-dot {
+    transform: scale(1.35);
+    box-shadow: 0 0 0 5px rgba(24,72,160,0.15);
+  }
+
+  .exp-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;
+  }
+
+  .exp-company {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--navy);
+  }
+
+  .exp-date {
+    font-family: 'DM Mono', monospace; font-size: 0.62rem;
+    color: var(--blue); letter-spacing: 0.12em;
+    padding: 0.22rem 0.55rem;
+    border: 1px solid rgba(24,72,160,0.25);
+    background: rgba(24,72,160,0.04); white-space: nowrap;
+    font-weight: 400;
+  }
+
+  .exp-role {
+    font-size: 0.73rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 0.9rem; font-weight: 500;
+  }
+
+  .exp-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.12em; padding: 0.18rem 0.5rem;
+    background: rgba(34,197,94,0.1); color: #15803D;
+    border: 1px solid rgba(34,197,94,0.3);
+    text-transform: uppercase; margin-left: 0.5rem;
+    vertical-align: middle; font-weight: 500;
+    animation: badgePulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes badgePulse {
+    0%,100% { background: rgba(34,197,94,0.1); }
+    50% { background: rgba(34,197,94,0.18); }
+  }
+
+  .exp-bullets { list-style: none; }
+
+  .exp-bullets li {
+    padding: 0.35rem 0 0.35rem 1.2rem;
+    position: relative; font-size: 0.9rem;
+    line-height: 1.78; color: var(--textsub); font-weight: 400;
+  }
+
+  .exp-bullets li::before {
+    content: '—'; position: absolute; left: 0;
+    color: var(--accent); font-size: 0.8rem;
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--offwhite); }
+  .projects-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+
+  .project-card {
+    background: #fff; border: 1px solid var(--border);
+    padding: 2rem; position: relative; overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
+  }
+
+  .project-card:hover {
+    box-shadow: var(--shadow2);
+    border-color: var(--borderhov);
+    transform: translateY(-5px);
+  }
+
+  .project-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--navy), var(--accent));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover::before { transform: scaleX(1); }
+
+  /* Shimmer on hover */
+  .project-card::after {
+    content: ''; position: absolute;
+    top: 0; left: -100%; width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(24,72,160,0.04), transparent);
+    transition: left 0.6s ease;
+  }
+  .project-card:hover::after { left: 140%; }
+
+  .project-num {
+    font-family: 'DM Mono', monospace; font-size: 0.62rem;
+    color: var(--blue); letter-spacing: 0.18em; margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem; font-weight: 400; color: var(--navy);
+    margin-bottom: 0.6rem; line-height: 1.25;
+  }
+
+  .project-date {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    color: var(--muted); letter-spacing: 0.12em; margin-bottom: 0.9rem;
+    font-weight: 400;
+  }
+
+  .project-desc { font-size: 0.88rem; line-height: 1.82; color: var(--textsub); font-weight: 400; }
+
+  .project-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 1rem;
+    font-family: 'DM Mono', monospace; font-size: 0.65rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--blue); text-decoration: none; font-weight: 400;
+    border-bottom: 1px solid rgba(24,72,160,0.25);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .project-link:hover { color: var(--navy); border-color: var(--navy); }
+  .project-link::after { content: ' →'; font-size: 0.75rem; transition: transform 0.2s; display: inline-block; }
+  .project-link:hover::after { transform: translateX(3px); }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: #fff; }
+  .cert-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+  .cert-card {
+    background: var(--offwhite); border: 1px solid var(--border);
+    padding: 1.75rem; display: flex; flex-direction: column; gap: 0.9rem;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
+  }
+
+  .cert-card:hover {
+    box-shadow: var(--shadow2); border-color: var(--borderhov);
+    transform: translateY(-4px);
+  }
+
+  .cert-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(10,31,61,0.07);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+  }
+
+  .cert-card:hover .cert-icon { transform: rotate(10deg) scale(1.12); }
+
+  .cert-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 400;
+    color: var(--navy); line-height: 1.35;
+  }
+
+  .cert-issuer {
+    font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--blue); font-weight: 500;
+  }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--offwhite); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy); text-align: center;
+    padding: 8rem 4rem; position: relative; overflow: hidden;
+  }
+
+  #contact::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 56px 56px; pointer-events: none;
+  }
+
+  /* Animated rings in contact */
+  #contact::after {
+    content: ''; position: absolute;
+    width: 500px; height: 500px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.06);
+    left: 50%; top: 50%; transform: translate(-50%,-50%);
+    animation: ringPulse 4s ease-in-out infinite;
+  }
+
+  @keyframes ringPulse {
+    0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%,-50%) scale(1.15); opacity: 0.15; }
+  }
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+    font-weight: 300; font-style: italic;
+    color: #fff; margin-bottom: 0.75rem;
+    position: relative; z-index: 1;
+  }
+
+  .contact-sub {
+    font-size: 0.78rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: rgba(255,255,255,0.5);
+    margin-bottom: 3rem; position: relative; z-index: 1; font-weight: 400;
+  }
+
+  .contact-links {
+    display: flex; justify-content: center;
+    gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem;
+    position: relative; z-index: 1;
+  }
+
+  .contact-link {
+    display: flex; align-items: center; gap: 0.5rem;
+    text-decoration: none; color: rgba(255,255,255,0.7);
+    font-size: 0.88rem; font-weight: 400;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .contact-link:hover { color: #fff; transform: translateY(-2px); }
+  .contact-link .icon { font-size: 1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 1.75rem 4rem; background: #071629;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.68rem; letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.3); text-transform: uppercase; font-weight: 400;
+  }
+
+  /* ── SCROLL PROGRESS BAR ── */
+  #progress-bar {
+    position: fixed; top: 0; left: 0; z-index: 200;
+    height: 3px; width: 0%;
+    background: linear-gradient(90deg, var(--navy), var(--accent));
+    transition: width 0.1s linear;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* stagger children */
+  .skills-grid .reveal:nth-child(1) { transition-delay: 0s; }
+  .skills-grid .reveal:nth-child(2) { transition-delay: 0.12s; }
+  .skills-grid .reveal:nth-child(3) { transition-delay: 0.24s; }
+  .projects-grid .reveal:nth-child(odd)  { transition-delay: 0s; }
+  .projects-grid .reveal:nth-child(even) { transition-delay: 0.12s; }
+  .cert-grid .reveal:nth-child(1) { transition-delay: 0s; }
+  .cert-grid .reveal:nth-child(2) { transition-delay: 0.1s; }
+  .cert-grid .reveal:nth-child(3) { transition-delay: 0.2s; }
+
+  /* ── COUNTER ANIMATE ── */
+  .stat-num { transition: color 0.3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.1rem 1.5rem; }
+    .nav-links { gap: 1.25rem; }
+    #hero { grid-template-columns: 1fr; padding: 7rem 1.75rem 4rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 1.75rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.4rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"></div>
+
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div style="text-align:center; position:relative;">
+    <div class="loader-text">
+      <span style="animation-delay:0s">H</span><span style="animation-delay:0.07s">e</span><span style="animation-delay:0.14s">t</span><span style="animation-delay:0.21s">s</span><span style="animation-delay:0.28s">i</span>&nbsp;<span style="animation-delay:0.4s">T</span><span style="animation-delay:0.47s">e</span><span style="animation-delay:0.54s">w</span><span style="animation-delay:0.61s">a</span><span style="animation-delay:0.68s">r</span>
+    </div>
+    <div style="font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.3em;color:rgba(255,255,255,0.45);margin-top:0.75rem;text-transform:uppercase;animation:fadeIn 0.5s 0.8s forwards;opacity:0;">QA Engineer · Portfolio</div>
+    <div class="loader-line"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">HT</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="HetsiTewar_Resume.pdf" download class="btn-resume"><span class="dl-icon">⬇</span> Resume</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-circle"></div>
+
+  <div class="hero-left">
+    <div class="hero-tag">Available for opportunities</div>
+    <h1 class="hero-name">
+      Hetsi
+      <span>Tewar</span>
+    </h1>
+    <p class="hero-role">QA Engineer &nbsp;·&nbsp; Software Test Engineer</p>
+    <p class="hero-intro">
+      Aspiring QA Engineer with hands-on experience in Manual & Automation Testing. Proficient in Playwright for end-to-end test automation, delivering high-quality software through structured testing methodologies and continuous quality improvement.
+    </p>
+    <div class="hero-cta">
+      <a href="mailto:tewarhetsi@gmail.com" class="btn-primary"><span>Get In Touch</span></a>
+      <a href="#experience" class="btn-outline">View Work</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="card-stat">
+        <span class="stat-num" data-target="5">0</span><span class="stat-num">+</span>
+        <span class="stat-label">Companies & Roles</span>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-stat">
+        <span class="stat-num" data-target="7">0</span>
+        <span class="stat-label">Projects Delivered</span>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-stat">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Certifications</span>
+      </div>
+      <div class="card-divider"></div>
+      <div class="card-stat">
+        <span class="stat-num" data-target="7.67" data-decimal="true">0</span>
+        <span class="stat-label">CGPA – B.Tech CE</span>
+      </div>
+    </div>
   </div>
 </section>
 
-      <!-- Education -->
-      <section>
-        <header><h2>Education</h2></header>
-        <div class="content">
-          <h3>B.E. in Computer Engineering</h3>
-          <p>
-            <strong>SVIT, Vasad</strong> – CGPA: 7.18<br>
-            Graduated: 2024
-          </p>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section>
-        <header><h2>Get in Touch</h2></header>
-        <div class="content">
-          <ul class="items">
-            <li>
-              <h3>Email</h3>
-              <a href="mailto:hetsitewar456@gmail.com">hetsitewar456@gmail.com</a>
-            </li>
-            <li>
-              <h3>GitHub</h3>
-              <a href="https://github.com/hetsi0307">github.com/hetsi0307</a>
-            </li>
-            <li>
-              <h3>LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda/">linkedin.com/in/hetsi-tewar-engineer-wordpress-developer-baroda</a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div class="copyright">
-        &copy; Hetsi Tewar. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">Testing Expertise</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Manual Testing</span><span class="skill-tag">Automation Testing</span>
+        <span class="skill-tag">Playwright</span><span class="skill-tag">Test Case Design</span>
+        <span class="skill-tag">Bug Reporting</span><span class="skill-tag">Regression Testing</span>
+        <span class="skill-tag">Smoke Testing</span><span class="skill-tag">Functional Testing</span>
+        <span class="skill-tag">API Testing</span>
       </div>
     </div>
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">Tools & Technologies</div>
+      <div class="skill-tags">
+        <span class="skill-tag">JavaScript</span><span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span><span class="skill-tag">MySQL</span>
+        <span class="skill-tag">Database (SQL)</span><span class="skill-tag">AWS</span>
+        <span class="skill-tag">Git</span><span class="skill-tag">Prompt Engineering</span>
+        <span class="skill-tag">ChatGPT & Claude</span><span class="skill-tag">Microsoft Office</span>
+        <span class="skill-tag">OOPs</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <div class="skill-cat-title">Soft Skills</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Communication</span><span class="skill-tag">Quick Learner</span>
+        <span class="skill-tag">Team Collaboration</span><span class="skill-tag">Attention to Detail</span>
+        <span class="skill-tag">Problem Solving</span><span class="skill-tag">Time Management</span>
+        <span class="skill-tag">Adaptability</span><span class="skill-tag">Critical Thinking</span>
+        <span class="skill-tag">Work Ethic</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-header">
+        <div>
+          <span class="exp-company">Rishabh Software</span>
+          <span class="exp-badge">Current</span>
+        </div>
+        <span class="exp-date">Jan 2026 – Present</span>
+      </div>
+      <div class="exp-role">Quality Assurance Tester · Internship</div>
+      <ul class="exp-bullets">
+        <li>Conducted Manual and Automation Testing using Playwright for web applications.</li>
+        <li>Wrote and executed detailed test cases; logged and tracked defects using bug tracking tools.</li>
+        <li>Performed regression, smoke, and functional testing to validate software quality.</li>
+        <li>Collaborated with developers to ensure timely bug resolution and QA sign-off.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-header">
+        <div><span class="exp-company">SEOWebPlanet Solutions</span></div>
+        <span class="exp-date">Jul 2025 – Dec 2025</span>
+      </div>
+      <div class="exp-role">WordPress Developer · Full-Time</div>
+      <ul class="exp-bullets">
+        <li>Developed and customized WordPress websites as per client requirements.</li>
+        <li>Performed cross-browser compatibility testing to ensure consistent UI.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-header">
+        <div><span class="exp-company">Maskoid Technologies</span></div>
+        <span class="exp-date">Apr 2025 – Jul 2025</span>
+      </div>
+      <div class="exp-role">WordPress Developer · Internship</div>
+      <ul class="exp-bullets">
+        <li>Built and customized WordPress websites; ensured UI consistency across platforms.</li>
+        <li>Conducted cross-browser compatibility checks for all client deliverables.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-header">
+        <div><span class="exp-company">LINQ Corporate Solutions Pvt. Ltd.</span></div>
+        <span class="exp-date">Oct 2024 – Apr 2025</span>
+      </div>
+      <div class="exp-role">Data Executive · Full-Time</div>
+      <ul class="exp-bullets">
+        <li>Handled data entry, reporting tasks, and validation of data accuracy and integrity.</li>
+        <li>Worked as a System Trainee for initial onboarding period (Oct – Nov 2024).</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-header">
+        <div><span class="exp-company">L&T Technology Services</span></div>
+        <span class="exp-date">2022</span>
+      </div>
+      <div class="exp-role">Front-End Development · Internship</div>
+      <ul class="exp-bullets">
+        <li>Developed responsive UI components using HTML, CSS, and JavaScript.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-num">01 · QA</div>
+      <div class="project-title">Amazon.in – Manual &amp; Automation Testing</div>
+      <div class="project-date">6 May – 22 May 2026</div>
+      <p class="project-desc">Comprehensive Manual Testing on the live Amazon.in platform — test cases, detailed bug reports, and a full test report covering functional and UI validation. Automated key user flows using Playwright: Login, Registration, Home, Search, Add to Cart, and Checkout.</p>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">02 · QA</div>
+      <div class="project-title">GreenKart Website Testing</div>
+      <div class="project-date">12 Apr – 18 Apr 2026</div>
+      <p class="project-desc">End-to-end Manual &amp; Automation Testing with Playwright. Documented test cases, executed test suites, and reported defects with detailed bug reports and comprehensive QA validation coverage.</p>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">03 · AI</div>
+      <div class="project-title">AI Voice Interactive Memory Match Game</div>
+      <div class="project-date">Aug 2025</div>
+      <p class="project-desc">AI-powered voice interactive memory match game featuring real-time voice commands to flip and match cards. Designed with a modern glassmorphism UI; integrated Speech Recognition API for hands-free gameplay.</p>
+      <a href="https://hetsi0307.github.io/memory-match/" target="_blank" class="project-link">View Live Project</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">04 · AI</div>
+      <div class="project-title">AI Hand Gesture Recognition – Air Writing</div>
+      <div class="project-date">Mar 2025</div>
+      <p class="project-desc">Virtual air writing application using hand gesture recognition via webcam and computer vision. Enabled users to draw and write in the air using finger tracking with real-time visual feedback on screen.</p>
+      <a href="https://hetsi0307.github.io/airwriting/" target="_blank" class="project-link">View Live Project</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">05 · AI</div>
+      <div class="project-title">AI Hand Gesture Magical Particles</div>
+      <div class="project-date">Jan 2025</div>
+      <p class="project-desc">Gesture-controlled visual interaction project where hand movements generate dynamic particle effects. Integrated real-time hand tracking to produce interactive visual animations triggered by user gestures.</p>
+      <a href="https://hetsi0307.github.io/Gesture_controlled/" target="_blank" class="project-link">View Live Project</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">06 · WEB</div>
+      <div class="project-title">Dr. Mahavrat's Homeopathy Clinic Website</div>
+      <div class="project-date">Jul 2025 – Dec 2025</div>
+      <p class="project-desc">Complete website developed for Dr. Mahavrat S Patel, senior doctor in Vadodara. Covers homeopathy, aesthetic treatments (radiofrequency, skin peels, diode laser), and holistic healing including Ayurveda, Reiki, Yoga, and Naturopathy.</p>
+      <a href="https://www.homeopathyhealing.net/" target="_blank" class="project-link">View Live Project</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">07 · WEB</div>
+      <div class="project-title">Maskoid Technology – Company Website</div>
+      <div class="project-date">Apr 2025 – Jul 2025</div>
+      <p class="project-desc">Contributed to the company website during internship at Maskoid Technologies. Focused on service section pages for an SEO-friendly WordPress site builder company located in Vadodara.</p>
+      <a href="https://maskoid.com/" target="_blank" class="project-link">View Live Project</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card reveal">
+      <div class="cert-icon">🎓</div>
+      <div class="cert-name">Prompt Engineering Certification</div>
+      <div class="cert-issuer">Google · Coursera</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">☁️</div>
+      <div class="cert-name">AWS Cloud Practitioner Essentials</div>
+      <div class="cert-issuer">Amazon Web Services</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🤖</div>
+      <div class="cert-name">Introduction to AI Concepts</div>
+      <div class="cert-issuer">Microsoft Certified</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item visible">
+      <div class="timeline-dot"></div>
+      <div class="exp-header">
+        <div><span class="exp-company">Sardar Vallabhbhai Patel Institute of Technology</span></div>
+        <span class="exp-date">2020 – 2024</span>
+      </div>
+      <div class="exp-role">B.Tech in Computer Engineering &nbsp;·&nbsp; CGPA: 7.67</div>
+      <ul class="exp-bullets">
+        <li>Graduated with a strong foundation in computer science, software development, and engineering principles.</li>
+        <li>Built multiple AI-powered projects showcasing creativity and technical depth throughout the program.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="contact-title reveal">Let's Connect</h2>
+  <p class="contact-sub reveal">Open to QA Engineer & Software Test Engineer roles</p>
+
+  <div class="contact-links reveal">
+    <a href="mailto:tewarhetsi@gmail.com" class="contact-link">
+      <span class="icon">✉</span> tewarhetsi@gmail.com
+    </a>
+    <a href="tel:+919662543914" class="contact-link">
+      <span class="icon">✆</span> +91 96625 43914
+    </a>
+    <a href="https://www.linkedin.com/in/hetsi-tewar-139239231/" target="_blank" class="contact-link">
+      <span class="icon">in</span> LinkedIn
+    </a>
+    <a href="https://github.com/hetsi0307" target="_blank" class="contact-link">
+      <span class="icon">⌥</span> GitHub
+    </a>
+    <a href="https://hetsi0307.github.io/" target="_blank" class="contact-link">
+      <span class="icon">◈</span> Portfolio
+    </a>
+  </div>
+
+  <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:0.1em;position:relative;z-index:1;font-weight:400;">Vadodara, Gujarat, India</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>Hetsi Tewar © 2026</span>
+  <span>QA Engineer · Vadodara, India</span>
+</footer>
+
+<script>
+  // ── LOADER ──
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader').classList.add('hidden');
+    }, 1600);
+  });
+
+  // ── SCROLL PROGRESS BAR ──
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+
+  // ── CURSOR GLOW ──
+  const glow = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', (e) => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top  = e.clientY + 'px';
+  });
+
+  // ── SCROLL REVEAL ──
+  const reveals = document.querySelectorAll('.reveal, .timeline-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'),
+          parseInt(entry.target.dataset.delay) || 0);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach((el, i) => {
+    el.dataset.delay = (i % 5) * 80;
+    observer.observe(el);
+  });
+
+  // ── COUNTER ANIMATION ──
+  const counters = document.querySelectorAll('.stat-num[data-target]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const isDecimal = el.dataset.decimal === 'true';
+        const duration = 1400;
+        const start = performance.now();
+        const animate = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = target * eased;
+          el.textContent = isDecimal ? value.toFixed(2) : Math.floor(value);
+          if (progress < 1) requestAnimationFrame(animate);
+          else el.textContent = isDecimal ? target.toFixed(2) : target;
+        };
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => counterObserver.observe(el));
+</script>
+</body>
 </html>
